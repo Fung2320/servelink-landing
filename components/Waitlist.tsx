@@ -89,6 +89,13 @@ export default function Waitlist() {
                 </button>
               </div>
 
+              {/* Trust badges */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-6 text-sm text-white/60">
+                <span>{t("trustBadge1")}</span>
+                <span className="hidden sm:inline">·</span>
+                <span>{t("trustBadge2")}</span>
+              </div>
+
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
                 {tab === "email" ? (
                   <input
@@ -134,6 +141,22 @@ export default function Waitlist() {
                   )}
                 </button>
               </form>
+
+              {/* Privacy note + SSL */}
+              <div className="mt-4 flex flex-col items-center gap-2">
+                <p className="text-xs text-white/40">
+                  {t("privacyNote")}{" "}
+                  <a
+                    href="https://api.servelinkapp.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white/60 transition-colors"
+                  >
+                    {t("privacyLink")}
+                  </a>
+                </p>
+                <p className="text-xs text-white/30">{t("sslNote")}</p>
+              </div>
             </div>
           )}
         </AnimateOnScroll>

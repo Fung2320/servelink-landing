@@ -66,6 +66,11 @@ export const translations = {
     joinBtn: "Join Waitlist",
     successMsg: "You\u2019re on the list! We\u2019ll notify you when ServeLink launches.",
     socialProof: "Join 100+ early members from Douala, Yaound\u00e9, Limb\u00e9 & Bafoussam",
+    trustBadge1: "\uD83D\uDD12 Your data is safe & never shared",
+    trustBadge2: "No spam. No credit card required.",
+    privacyNote: "By signing up you agree to our",
+    privacyLink: "Privacy Policy",
+    sslNote: "\uD83D\uDD10 256-bit SSL encrypted",
 
     // Footer
     footerTagline: "Trusted home services across Cameroon.",
@@ -153,6 +158,11 @@ export const translations = {
       "Vous \u00eates sur la liste ! Nous vous pr\u00e9viendrons quand ServeLink sera disponible.",
     socialProof:
       "Rejoignez 100+ membres de Douala, Yaound\u00e9, Limb\u00e9 & Bafoussam",
+    trustBadge1: "\uD83D\uDD12 Vos donn\u00e9es sont prot\u00e9g\u00e9es et jamais partag\u00e9es",
+    trustBadge2: "Pas de spam. Pas de carte bancaire requise.",
+    privacyNote: "En vous inscrivant, vous acceptez notre",
+    privacyLink: "Politique de confidentialit\u00e9",
+    sslNote: "\uD83D\uDD10 Chiffrement SSL 256 bits",
 
     // Footer
     footerTagline: "Services \u00e0 domicile de confiance au Cameroun.",
