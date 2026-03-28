@@ -10,7 +10,7 @@ export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
 
   // Simple password gate (not for production — just a quick admin view)
-  const ADMIN_PASS = "servelink2026";
+  const ADMIN_PASS = process.env.NEXT_PUBLIC_ADMIN_PASS || "SvLk!@dm1n#2026$Cm";
 
   const handleAuth = (e: React.FormEvent) => {
     e.preventDefault();
