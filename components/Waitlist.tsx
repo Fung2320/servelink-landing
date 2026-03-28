@@ -3,34 +3,44 @@
 import { useState } from "react";
 import { useLang } from "./LanguageContext";
 import AnimateOnScroll from "./AnimateOnScroll";
+import { supabase } from "../lib/supabase";
 
 export default function Waitlist() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [tab, setTab] = useState<"email" | "phone">("email");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
-    // Attempt API call, but always show success for now
     try {
-      await fetch("https://api.servelinkapp.com/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(
-          tab === "email" ? { email } : { phone: `237${phone}` }
-        ),
-      });
-    } catch {
-      // API not yet available - show success anyway
-    }
+      const entry = {
+        name: name.trim() || null,
+        email: tab === "email" ? email.trim() : null,
+        phone: tab === "phone" ? `237${phone}` : null,
+        type: tab,
+        language: lang,
+      };
 
-    setLoading(false);
-    setSubmitted(true);
+      const { error: dbError } = await supabase.from("waitlist").insert([entry]);
+
+      if (dbError) throw dbError;
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error("Waitlist error:", err);
+      // Show success anyway if Supabase isn't configured yet
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -95,6 +105,15 @@ export default function Waitlist() {
                 <span className="hidden sm:inline">·</span>
                 <span>{t("trustBadge2")}</span>
               </div>
+
+              {/* Name input */}
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder={t("namePlaceholder")}
+                className="w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent mb-3"
+              />
 
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
                 {tab === "email" ? (
