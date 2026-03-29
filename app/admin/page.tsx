@@ -3,18 +3,22 @@
 import { useEffect, useState } from "react";
 import { supabase, type WaitlistEntry } from "../../lib/supabase";
 
+const ADMIN_PASS = "ServeLink@Admin2026";
+
 export default function AdminPage() {
   const [entries, setEntries] = useState<WaitlistEntry[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
   const [authed, setAuthed] = useState(false);
+  const [error, setError] = useState("");
 
-  // Simple password gate (not for production — just a quick admin view)
-  const ADMIN_PASS = process.env.NEXT_PUBLIC_ADMIN_PASS || "SvLk!@dm1n#2026$Cm";
-
-  const handleAuth = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (password === ADMIN_PASS) setAuthed(true);
+  const handleAuth = () => {
+    if (password === ADMIN_PASS) {
+      setAuthed(true);
+      setError("");
+    } else {
+      setError("Wrong password");
+    }
   };
 
   useEffect(() => {
@@ -24,12 +28,16 @@ export default function AdminPage() {
 
   const fetchEntries = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from("waitlist")
-      .select("*")
-      .order("created_at", { ascending: false });
+    try {
+      const { data, error: dbErr } = await supabase
+        .from("waitlist")
+        .select("*")
+        .order("created_at", { ascending: false });
 
-    if (!error && data) setEntries(data);
+      if (!dbErr && data) setEntries(data);
+    } catch {
+      // Supabase not configured yet
+    }
     setLoading(false);
   };
 
@@ -48,126 +56,150 @@ export default function AdminPage() {
     URL.revokeObjectURL(url);
   };
 
+  // ── Login screen ──
   if (!authed) {
     return (
-      <div className="min-h-screen bg-[#0F1E2A] flex items-center justify-center px-4">
-        <form onSubmit={handleAuth} className="bg-[#1a2e3e] rounded-2xl p-8 w-full max-w-sm border border-white/10">
-          <h1 className="text-xl font-bold text-white mb-6 text-center">ServeLink Admin</h1>
+      <div style={{
+        minHeight: "100vh", backgroundColor: "#0F1E2A",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        padding: "16px",
+      }}>
+        <div style={{
+          backgroundColor: "#1a2e3e", borderRadius: "16px", padding: "32px",
+          width: "100%", maxWidth: "400px", border: "1px solid rgba(255,255,255,0.1)",
+        }}>
+          <h1 style={{ fontSize: "20px", fontWeight: "bold", color: "#fff", textAlign: "center", marginBottom: "24px" }}>
+            🔒 ServeLink Admin
+          </h1>
           <input
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => { setPassword(e.target.value); setError(""); }}
+            onKeyDown={(e) => e.key === "Enter" && handleAuth()}
             placeholder="Enter admin password"
-            className="w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#E85D04] mb-4"
             autoFocus
+            style={{
+              width: "100%", borderRadius: "12px", backgroundColor: "rgba(255,255,255,0.1)",
+              border: error ? "2px solid #EF4444" : "1px solid rgba(255,255,255,0.2)",
+              padding: "12px 16px", color: "#fff", fontSize: "16px",
+              marginBottom: "8px", outline: "none", boxSizing: "border-box",
+            }}
           />
+          {error && (
+            <p style={{ color: "#EF4444", fontSize: "13px", marginBottom: "8px" }}>{error}</p>
+          )}
           <button
-            type="submit"
-            className="w-full rounded-xl bg-[#E85D04] px-4 py-3 text-white font-semibold hover:bg-[#c44e03] transition-colors"
+            onClick={handleAuth}
+            style={{
+              width: "100%", borderRadius: "12px", backgroundColor: "#E85D04",
+              padding: "12px", color: "#fff", fontWeight: "600", fontSize: "16px",
+              border: "none", cursor: "pointer", marginTop: "8px",
+            }}
           >
             Login
           </button>
-        </form>
+        </div>
       </div>
     );
   }
 
+  // ── Dashboard ──
   const emailCount = entries.filter((e) => e.type === "email").length;
   const phoneCount = entries.filter((e) => e.type === "phone").length;
 
   return (
-    <div className="min-h-screen bg-[#0F1E2A] text-white">
-      <div className="max-w-6xl mx-auto px-4 py-8">
+    <div style={{ minHeight: "100vh", backgroundColor: "#0F1E2A", color: "#fff" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "32px 16px" }}>
         {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px", marginBottom: "32px" }}>
           <div>
-            <h1 className="text-2xl font-bold">ServeLink Waitlist</h1>
-            <p className="text-white/50 text-sm mt-1">Admin dashboard</p>
+            <h1 style={{ fontSize: "24px", fontWeight: "bold" }}>ServeLink Waitlist</h1>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "14px", marginTop: "4px" }}>Admin dashboard</p>
           </div>
-          <div className="flex gap-3">
+          <div style={{ display: "flex", gap: "12px" }}>
             <button
               onClick={fetchEntries}
-              className="rounded-xl bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium hover:bg-white/20 transition-colors"
+              style={{
+                borderRadius: "12px", backgroundColor: "rgba(255,255,255,0.1)",
+                border: "1px solid rgba(255,255,255,0.2)", padding: "8px 16px",
+                color: "#fff", fontSize: "14px", cursor: "pointer",
+              }}
             >
-              Refresh
+              ↻ Refresh
             </button>
             <button
               onClick={exportCSV}
-              className="rounded-xl bg-[#1B6B7B] px-4 py-2 text-sm font-medium hover:bg-[#155a68] transition-colors"
+              style={{
+                borderRadius: "12px", backgroundColor: "#1B6B7B",
+                border: "none", padding: "8px 16px",
+                color: "#fff", fontSize: "14px", cursor: "pointer",
+              }}
             >
-              Export CSV
+              📥 Export CSV
             </button>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mb-8">
-          <div className="bg-[#1a2e3e] rounded-xl border border-white/10 p-5 text-center">
-            <div className="text-3xl font-bold text-[#E85D04]">{entries.length}</div>
-            <div className="text-sm text-white/50 mt-1">Total Signups</div>
-          </div>
-          <div className="bg-[#1a2e3e] rounded-xl border border-white/10 p-5 text-center">
-            <div className="text-3xl font-bold text-[#1B6B7B]">{emailCount}</div>
-            <div className="text-sm text-white/50 mt-1">Email</div>
-          </div>
-          <div className="bg-[#1a2e3e] rounded-xl border border-white/10 p-5 text-center">
-            <div className="text-3xl font-bold text-[#4CAF50]">{phoneCount}</div>
-            <div className="text-sm text-white/50 mt-1">Phone</div>
-          </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "32px" }}>
+          {[
+            { label: "Total Signups", value: entries.length, color: "#E85D04" },
+            { label: "Email", value: emailCount, color: "#1B6B7B" },
+            { label: "Phone", value: phoneCount, color: "#4CAF50" },
+          ].map((stat) => (
+            <div key={stat.label} style={{
+              backgroundColor: "#1a2e3e", borderRadius: "12px",
+              border: "1px solid rgba(255,255,255,0.1)", padding: "20px", textAlign: "center",
+            }}>
+              <div style={{ fontSize: "32px", fontWeight: "bold", color: stat.color }}>{stat.value}</div>
+              <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", marginTop: "4px" }}>{stat.label}</div>
+            </div>
+          ))}
         </div>
 
         {/* Table */}
         {loading ? (
-          <div className="text-center py-16 text-white/40">Loading...</div>
+          <div style={{ textAlign: "center", padding: "64px 0", color: "rgba(255,255,255,0.4)" }}>Loading...</div>
         ) : entries.length === 0 ? (
-          <div className="text-center py-16 text-white/40">
-            <div className="text-4xl mb-4">📋</div>
-            <p>No signups yet</p>
+          <div style={{ textAlign: "center", padding: "64px 0", color: "rgba(255,255,255,0.4)" }}>
+            <div style={{ fontSize: "48px", marginBottom: "16px" }}>📋</div>
+            <p>No signups yet. Connect Supabase to start collecting waitlist entries.</p>
           </div>
         ) : (
-          <div className="bg-[#1a2e3e] rounded-xl border border-white/10 overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+          <div style={{
+            backgroundColor: "#1a2e3e", borderRadius: "12px",
+            border: "1px solid rgba(255,255,255,0.1)", overflow: "hidden",
+          }}>
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", fontSize: "14px", borderCollapse: "collapse" }}>
                 <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="text-left px-4 py-3 text-white/50 font-medium">#</th>
-                    <th className="text-left px-4 py-3 text-white/50 font-medium">Name</th>
-                    <th className="text-left px-4 py-3 text-white/50 font-medium">Contact</th>
-                    <th className="text-left px-4 py-3 text-white/50 font-medium">Type</th>
-                    <th className="text-left px-4 py-3 text-white/50 font-medium">Lang</th>
-                    <th className="text-left px-4 py-3 text-white/50 font-medium">Date</th>
+                  <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+                    {["#", "Name", "Contact", "Type", "Lang", "Date"].map((h) => (
+                      <th key={h} style={{ textAlign: "left", padding: "12px 16px", color: "rgba(255,255,255,0.5)", fontWeight: "500" }}>{h}</th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
                   {entries.map((entry, i) => (
-                    <tr key={entry.id} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="px-4 py-3 text-white/30">{i + 1}</td>
-                      <td className="px-4 py-3">{entry.name || "—"}</td>
-                      <td className="px-4 py-3">
-                        {entry.type === "email" ? (
-                          <span className="text-[#1B6B7B]">{entry.email}</span>
-                        ) : (
-                          <span className="text-[#4CAF50]">+{entry.phone}</span>
-                        )}
+                    <tr key={entry.id} style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                      <td style={{ padding: "12px 16px", color: "rgba(255,255,255,0.3)" }}>{i + 1}</td>
+                      <td style={{ padding: "12px 16px" }}>{entry.name || "—"}</td>
+                      <td style={{ padding: "12px 16px", color: entry.type === "email" ? "#1B6B7B" : "#4CAF50" }}>
+                        {entry.type === "email" ? entry.email : `+${entry.phone}`}
                       </td>
-                      <td className="px-4 py-3">
-                        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${
-                          entry.type === "email"
-                            ? "bg-[#1B6B7B]/20 text-[#1B6B7B]"
-                            : "bg-[#4CAF50]/20 text-[#4CAF50]"
-                        }`}>
+                      <td style={{ padding: "12px 16px" }}>
+                        <span style={{
+                          display: "inline-block", padding: "2px 8px", borderRadius: "999px", fontSize: "12px", fontWeight: "500",
+                          backgroundColor: entry.type === "email" ? "rgba(27,107,123,0.2)" : "rgba(76,175,80,0.2)",
+                          color: entry.type === "email" ? "#1B6B7B" : "#4CAF50",
+                        }}>
                           {entry.type}
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-white/50">{entry.language?.toUpperCase()}</td>
-                      <td className="px-4 py-3 text-white/50">
+                      <td style={{ padding: "12px 16px", color: "rgba(255,255,255,0.5)" }}>{entry.language?.toUpperCase()}</td>
+                      <td style={{ padding: "12px 16px", color: "rgba(255,255,255,0.5)" }}>
                         {entry.created_at
-                          ? new Date(entry.created_at).toLocaleDateString("en-US", {
-                              month: "short",
-                              day: "numeric",
-                              hour: "2-digit",
-                              minute: "2-digit",
-                            })
+                          ? new Date(entry.created_at).toLocaleDateString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })
                           : "—"}
                       </td>
                     </tr>
