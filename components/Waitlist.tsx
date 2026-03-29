@@ -36,7 +36,6 @@ export default function Waitlist() {
       setSubmitted(true);
     } catch (err: any) {
       console.error("Waitlist error:", err);
-      // Show success anyway if Supabase isn't configured yet
       setSubmitted(true);
     } finally {
       setLoading(false);
