@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLang } from "./LanguageContext";
 import AnimateOnScroll from "./AnimateOnScroll";
 import { supabase } from "../lib/supabase";
+import QRCodeBlock from "./QRCode";
 
 export default function Waitlist() {
   const { t, lang } = useLang();
@@ -51,7 +52,7 @@ export default function Waitlist() {
         <div className="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-orange blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
         <AnimateOnScroll>
           <h2
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
@@ -177,6 +178,12 @@ export default function Waitlist() {
               </div>
             </div>
           )}
+        </AnimateOnScroll>
+
+        <AnimateOnScroll>
+          <div className="mt-8">
+            <QRCodeBlock label={t("qrShareFriends")} size={150} showDownload />
+          </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll>

@@ -2,6 +2,7 @@
 
 import { useLang } from "./LanguageContext";
 import Logo from "./Logo";
+import QRCodeBlock from "./QRCode";
 
 const socials = [
   {
@@ -57,7 +58,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy-dark text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Logo size={32} />
@@ -123,6 +124,11 @@ export default function Footer() {
                 {t("footerTerms")}
               </a>
             </div>
+          </div>
+
+          {/* QR Code */}
+          <div className="sm:col-span-2 lg:col-span-1 flex justify-center lg:justify-start">
+            <QRCodeBlock label={t("qrShareServeLink")} size={120} />
           </div>
         </div>
 

@@ -73,6 +73,11 @@ export const translations = {
     privacyLink: "Privacy Policy",
     sslNote: "\uD83D\uDD10 256-bit SSL encrypted",
 
+    // QR Code
+    qrShareFriends: "Scan to share with friends",
+    qrShareServeLink: "Share ServeLink",
+    qrDownload: "\u2b07 Download QR for print & social media",
+
     // Footer
     footerTagline: "Trusted home services across Cameroon.",
     footerContact: "Contact",
@@ -165,6 +170,11 @@ export const translations = {
     privacyNote: "En vous inscrivant, vous acceptez notre",
     privacyLink: "Politique de confidentialit\u00e9",
     sslNote: "\uD83D\uDD10 Chiffrement SSL 256 bits",
+
+    // QR Code
+    qrShareFriends: "Scannez pour partager avec vos amis",
+    qrShareServeLink: "Partager ServeLink",
+    qrDownload: "\u2b07 T\u00e9l\u00e9charger le QR pour impression & r\u00e9seaux sociaux",
 
     // Footer
     footerTagline: "Services \u00e0 domicile de confiance au Cameroun.",
