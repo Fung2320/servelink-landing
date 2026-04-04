@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useLang } from "./LanguageContext";
 import AnimateOnScroll from "./AnimateOnScroll";
+import { supabase, type TestimonialEntry } from "../lib/supabase";
 
 const ALL_TESTIMONIALS = [
   { nameKey: "test1Name", roleKey: "test1Role", textKey: "test1Text", avatar: "YF", color: "#1B6B7B" },
@@ -32,10 +33,71 @@ const ALL_TESTIMONIALS = [
   { nameKey: "test25Name", roleKey: "test25Role", textKey: "test25Text", avatar: "RN", color: "#1B6B7B" },
 ];
 
+interface CardData {
+  type: "static" | "user";
+  // static
+  nameKey?: string;
+  roleKey?: string;
+  textKey?: string;
+  avatar?: string;
+  // user-submitted
+  name?: string;
+  role?: string;
+  text?: string;
+  stars?: number;
+  initials?: string;
+}
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
+
 export default function Testimonials() {
   const { t } = useLang();
   const [index, setIndex] = useState(0);
-  const total = ALL_TESTIMONIALS.length;
+  const [cards, setCards] = useState<CardData[]>(
+    ALL_TESTIMONIALS.map((item) => ({ type: "static", ...item }))
+  );
+
+  // Fetch approved user testimonials and merge
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await supabase
+          .from("testimonials")
+          .select("*")
+          .eq("approved", true)
+          .order("created_at", { ascending: false });
+
+        if (data && data.length > 0) {
+          const userCards: CardData[] = (data as TestimonialEntry[]).map((t) => ({
+            type: "user" as const,
+            name: t.name,
+            role:
+              t.role === "provider"
+                ? `Provider (waiting) — ${t.city}`
+                : `Waiting list — ${t.city}`,
+            text: t.message,
+            stars: t.stars,
+            initials: getInitials(t.name),
+          }));
+          setCards([
+            ...ALL_TESTIMONIALS.map((item) => ({ type: "static" as const, ...item })),
+            ...userCards,
+          ]);
+        }
+      } catch {
+        // Supabase not configured — show static only
+      }
+    })();
+  }, []);
+
+  const total = cards.length;
 
   const next = useCallback(() => {
     setIndex((prev) => (prev + 3) % total);
@@ -46,11 +108,10 @@ export default function Testimonials() {
     return () => clearInterval(timer);
   }, [next]);
 
-  // Get 3 testimonials starting from current index, wrapping around
   const visible = [
-    ALL_TESTIMONIALS[index % total],
-    ALL_TESTIMONIALS[(index + 1) % total],
-    ALL_TESTIMONIALS[(index + 2) % total],
+    cards[index % total],
+    cards[(index + 1) % total],
+    cards[(index + 2) % total],
   ];
 
   return (
@@ -71,34 +132,49 @@ export default function Testimonials() {
         </AnimateOnScroll>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {visible.map((item, i) => (
-            <div
-              key={`${index}-${i}`}
-              className="rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-500 h-full flex flex-col animate-fade-in"
-              style={{ backgroundColor: "#0E5E6B" }}
-            >
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: 5 }).map((_, j) => (
-                  <span key={j} style={{ color: "#E85D04" }} className="text-lg">★</span>
-                ))}
-              </div>
-              <p className="text-white/90 text-sm leading-relaxed flex-1 mb-5">
-                &ldquo;{t(item.textKey as any)}&rdquo;
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-white/20">
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
-                  style={{ backgroundColor: "#1B6B7B", color: "#ffffff" }}
-                >
-                  {item.avatar}
+          {visible.map((item, i) => {
+            const isUser = item.type === "user";
+            const displayStars = isUser ? (item.stars ?? 5) : 5;
+            const displayText = isUser ? item.text! : t(item.textKey as any);
+            const displayName = isUser ? item.name! : t(item.nameKey as any);
+            const displayRole = isUser ? item.role! : t(item.roleKey as any);
+            const displayAvatar = isUser ? item.initials! : item.avatar!;
+
+            return (
+              <div
+                key={`${index}-${i}`}
+                className="rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-500 h-full flex flex-col animate-fade-in"
+                style={{ backgroundColor: "#0E5E6B" }}
+              >
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <span
+                      key={j}
+                      className="text-lg"
+                      style={{ color: j < displayStars ? "#E85D04" : "rgba(255,255,255,0.2)" }}
+                    >
+                      ★
+                    </span>
+                  ))}
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-white">{t(item.nameKey as any)}</p>
-                  <p className="text-xs text-white/60">{t(item.roleKey as any)}</p>
+                <p className="text-white/90 text-sm leading-relaxed flex-1 mb-5">
+                  &ldquo;{displayText}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 pt-4 border-t border-white/20">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+                    style={{ backgroundColor: "#1B6B7B", color: "#ffffff" }}
+                  >
+                    {displayAvatar}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white">{displayName}</p>
+                    <p className="text-xs text-white/60">{displayRole}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Dots indicator */}

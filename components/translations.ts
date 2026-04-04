@@ -152,6 +152,26 @@ export const translations = {
     test25Role: "Provider (waiting) \u2014 Douala",
     test25Text: "The stress of chasing clients for cash payment is about to be over. MoMo escrow means money is secured before I even start. ServeLink understands our problems. First real platform built for us!",
 
+    // Share Your Thoughts form
+    shareTitle: "Share Your Thoughts",
+    shareSub: "Tell us why you're excited about ServeLink!",
+    shareName: "Name",
+    shareNamePh: "Your name",
+    shareCity: "City",
+    shareCityPh: "Select your city",
+    shareRole: "I am a...",
+    shareRoleClient: "Client (waiting)",
+    shareRoleProvider: "Provider (waiting)",
+    shareStars: "Your excitement level",
+    shareMessage: "Message",
+    shareMessagePh: "Why are you excited about ServeLink?",
+    shareSubmit: "Submit",
+    shareSubmitting: "Submitting...",
+    shareSuccess: "Thank you! Your review will appear soon 🎉",
+    shareSuccessSub: "An admin will review your testimonial shortly.",
+    shareError: "Please fill in all fields and select a star rating.",
+    shareErrorGeneric: "Something went wrong. Please try again.",
+
     // Pricing FAQ
     pricingTitle: "Pricing & Fees",
     pricingSub: "Transparent pricing, no surprises",
@@ -351,6 +371,26 @@ export const translations = {
     test25Name: "Roland N.",
     test25Role: "Prestataire (attente) \u2014 Douala",
     test25Text: "Le stress de courir apr\u00e8s les clients pour le cash, c\u2019est bient\u00f4t fini. L\u2019escrow MoMo s\u00e9curise l\u2019argent avant m\u00eame que je commence. ServeLink comprend nos probl\u00e8mes. Premi\u00e8re vraie plateforme faite pour nous !",
+
+    // Share Your Thoughts form
+    shareTitle: "Partagez vos impressions",
+    shareSub: "Dites-nous pourquoi ServeLink vous enthousiasme !",
+    shareName: "Nom",
+    shareNamePh: "Votre nom",
+    shareCity: "Ville",
+    shareCityPh: "S\u00e9lectionnez votre ville",
+    shareRole: "Je suis...",
+    shareRoleClient: "Client (en attente)",
+    shareRoleProvider: "Prestataire (en attente)",
+    shareStars: "Votre niveau d\u2019enthousiasme",
+    shareMessage: "Message",
+    shareMessagePh: "Pourquoi \u00eates-vous impatient(e) pour ServeLink ?",
+    shareSubmit: "Envoyer",
+    shareSubmitting: "Envoi en cours...",
+    shareSuccess: "Merci ! Votre avis appara\u00eetra bient\u00f4t \ud83c\udf89",
+    shareSuccessSub: "Un administrateur examinera votre t\u00e9moignage sous peu.",
+    shareError: "Veuillez remplir tous les champs et s\u00e9lectionner une note.",
+    shareErrorGeneric: "Une erreur est survenue. Veuillez r\u00e9essayer.",
 
     // Pricing FAQ
     pricingTitle: "Tarifs et frais",

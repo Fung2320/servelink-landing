@@ -8,6 +8,7 @@ import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import VideoSection from "@/components/VideoSection";
 import Testimonials from "@/components/Testimonials";
+import ShareThoughts from "@/components/ShareThoughts";
 import PricingFAQ from "@/components/PricingFAQ";
 import LiveActivity from "@/components/LiveActivity";
 import Waitlist from "@/components/Waitlist";
@@ -34,6 +35,7 @@ export default function Home() {
           src="/videos/tutorial-client.mp4"
         />
         <Testimonials />
+        <ShareThoughts />
         <PricingFAQ />
         <Waitlist />
       </main>

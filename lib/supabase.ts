@@ -15,3 +15,14 @@ export interface WaitlistEntry {
   language: string;
   created_at?: string;
 }
+
+export interface TestimonialEntry {
+  id?: string;
+  name: string;
+  city: string;
+  role: 'client' | 'provider';
+  message: string;
+  stars: number;
+  approved: boolean;
+  created_at?: string;
+}
