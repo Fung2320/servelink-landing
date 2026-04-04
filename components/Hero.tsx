@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { useLang } from "./LanguageContext";
 import AnimateOnScroll from "./AnimateOnScroll";
+import VideoModal from "./VideoModal";
 
 export default function Hero() {
   const { t } = useLang();
+  const [showVideo, setShowVideo] = useState(false);
 
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center hero-gradient overflow-hidden">
@@ -41,12 +44,12 @@ export default function Hero() {
             >
               {t("heroCta1")}
             </a>
-            <a
-              href="#how-it-works"
+            <button
+              onClick={() => setShowVideo(true)}
               className="w-full sm:w-auto rounded-full border-2 border-white/30 px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-white/10 hover:border-white/50"
             >
-              {t("heroCta2")}
-            </a>
+              ▶ {t("heroCta2")}
+            </button>
           </div>
         </AnimateOnScroll>
 
@@ -79,6 +82,12 @@ export default function Hero() {
           />
         </svg>
       </div>
+
+      <VideoModal
+        src="/videos/promo.mp4"
+        isOpen={showVideo}
+        onClose={() => setShowVideo(false)}
+      />
     </section>
   );
 }

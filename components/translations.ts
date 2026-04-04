@@ -73,6 +73,12 @@ export const translations = {
     privacyLink: "Privacy Policy",
     sslNote: "\uD83D\uDD10 256-bit SSL encrypted",
 
+    // Videos
+    videoClientTitle: "See ServeLink in action \uD83C\uDFAC",
+    videoClientSub: "Book any service in under 2 minutes",
+    videoProviderTitle: "Earn money with your skills \uD83D\uDCB0",
+    videoProviderSub: "Join Cameroon\u2019s fastest growing service platform",
+
     // QR Code
     qrShareFriends: "Scan to share with friends",
     qrShareServeLink: "Share ServeLink",
@@ -170,6 +176,12 @@ export const translations = {
     privacyNote: "En vous inscrivant, vous acceptez notre",
     privacyLink: "Politique de confidentialit\u00e9",
     sslNote: "\uD83D\uDD10 Chiffrement SSL 256 bits",
+
+    // Videos
+    videoClientTitle: "ServeLink en action \uD83C\uDFAC",
+    videoClientSub: "R\u00e9servez n\u2019importe quel service en moins de 2 minutes",
+    videoProviderTitle: "Gagnez de l\u2019argent avec vos comp\u00e9tences \uD83D\uDCB0",
+    videoProviderSub: "Rejoignez la plateforme de services qui cro\u00eet le plus vite au Cameroun",
 
     // QR Code
     qrShareFriends: "Scannez pour partager avec vos amis",
