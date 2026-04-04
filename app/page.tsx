@@ -7,6 +7,9 @@ import Services from "@/components/Services";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import VideoSection from "@/components/VideoSection";
+import Testimonials from "@/components/Testimonials";
+import PricingFAQ from "@/components/PricingFAQ";
+import LiveActivity from "@/components/LiveActivity";
 import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
 
@@ -30,9 +33,12 @@ export default function Home() {
           subtitleKey="videoClientSub"
           src="/videos/tutorial-client.mp4"
         />
+        <Testimonials />
+        <PricingFAQ />
         <Waitlist />
       </main>
       <Footer />
+      <LiveActivity />
     </LanguageProvider>
   );
 }

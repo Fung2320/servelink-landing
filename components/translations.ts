@@ -73,6 +73,36 @@ export const translations = {
     privacyLink: "Privacy Policy",
     sslNote: "\uD83D\uDD10 256-bit SSL encrypted",
 
+    // Testimonials
+    testimonialsTitle: "What People Are Saying",
+    testimonialsSub: "Early testers love ServeLink",
+    test1Name: "Ama M.",
+    test1Role: "Client \u2014 Douala",
+    test1Text: "I found a plumber in 10 minutes instead of 3 days. The price was fair and the provider showed up on time. This is what Cameroon needed.",
+    test2Name: "Ngong M.",
+    test2Role: "Provider \u2014 Yaound\u00e9",
+    test2Text: "I set up my profile in the morning and got my first job by afternoon. The 85% payout is much better than what I was getting before.",
+    test3Name: "Jeannette F.",
+    test3Role: "Client \u2014 Limb\u00e9",
+    test3Text: "Paying with MoMo directly in the app is so convenient. No more carrying cash to pay the cleaner. And I feel safe knowing the providers are verified.",
+
+    // Pricing FAQ
+    pricingTitle: "Pricing & Fees",
+    pricingSub: "Transparent pricing, no surprises",
+    priceFaq1Q: "How much does it cost to book a service?",
+    priceFaq1A: "Prices vary by service. You set your own budget when booking. Typical prices: cleaning 3,000\u201310,000 XAF, plumbing 5,000\u201315,000 XAF, tutoring 2,000\u20138,000 XAF per session.",
+    priceFaq2Q: "Are there any hidden fees?",
+    priceFaq2A: "No hidden fees. The price you see is the price you pay. ServeLink takes a 15% service fee from the provider\u2019s side, not from you.",
+    priceFaq3Q: "What payment methods are accepted?",
+    priceFaq3A: "MTN Mobile Money and Orange Money. Top up your ServeLink Wallet, then book instantly. Your money is held safely until the job is done.",
+    priceFaq4Q: "What if I cancel?",
+    priceFaq4A: "Free cancellation within 30 minutes of booking. After that, a 10% cancellation fee applies. The rest is refunded to your wallet.",
+    priceFaq5Q: "How do providers get paid?",
+    priceFaq5A: "Providers receive 85% of the booking amount directly in their ServeLink Wallet as soon as the job is marked complete. They can withdraw anytime via MoMo.",
+
+    // Live activity
+    liveActivity: "people browsing ServeLink right now",
+
     // Videos
     videoClientTitle: "See ServeLink in action \uD83C\uDFAC",
     videoClientSub: "Book any service in under 2 minutes",
@@ -176,6 +206,36 @@ export const translations = {
     privacyNote: "En vous inscrivant, vous acceptez notre",
     privacyLink: "Politique de confidentialit\u00e9",
     sslNote: "\uD83D\uDD10 Chiffrement SSL 256 bits",
+
+    // Testimonials
+    testimonialsTitle: "Ce qu\u2019on dit de nous",
+    testimonialsSub: "Les premiers utilisateurs adorent ServeLink",
+    test1Name: "Ama M.",
+    test1Role: "Cliente \u2014 Douala",
+    test1Text: "J\u2019ai trouv\u00e9 un plombier en 10 minutes au lieu de 3 jours. Le prix \u00e9tait juste et le prestataire est arriv\u00e9 \u00e0 l\u2019heure. C\u2019est ce dont le Cameroun avait besoin.",
+    test2Name: "Ngong M.",
+    test2Role: "Prestataire \u2014 Yaound\u00e9",
+    test2Text: "J\u2019ai configur\u00e9 mon profil le matin et re\u00e7u ma premi\u00e8re mission l\u2019apr\u00e8s-midi. Les 85% de reversement sont bien mieux que ce que je gagnais avant.",
+    test3Name: "Jeannette F.",
+    test3Role: "Cliente \u2014 Limb\u00e9",
+    test3Text: "Payer avec MoMo directement dans l\u2019appli, c\u2019est tellement pratique. Plus besoin de cash pour payer la femme de m\u00e9nage. Et les prestataires v\u00e9rifi\u00e9s, \u00e7a rassure.",
+
+    // Pricing FAQ
+    pricingTitle: "Tarifs et frais",
+    pricingSub: "Des prix transparents, sans surprise",
+    priceFaq1Q: "Combien co\u00fbte une r\u00e9servation ?",
+    priceFaq1A: "Les prix varient selon le service. Vous fixez votre budget. Prix typiques : m\u00e9nage 3 000\u201310 000 XAF, plomberie 5 000\u201315 000 XAF, cours 2 000\u20138 000 XAF.",
+    priceFaq2Q: "Y a-t-il des frais cach\u00e9s ?",
+    priceFaq2A: "Aucun frais cach\u00e9. Le prix affich\u00e9 est le prix que vous payez. ServeLink pr\u00e9l\u00e8ve 15% de commission du c\u00f4t\u00e9 du prestataire, pas du v\u00f4tre.",
+    priceFaq3Q: "Quels moyens de paiement sont accept\u00e9s ?",
+    priceFaq3A: "MTN Mobile Money et Orange Money. Rechargez votre portefeuille ServeLink, puis r\u00e9servez instantan\u00e9ment. Votre argent est s\u00e9curis\u00e9 jusqu\u2019\u00e0 la fin du travail.",
+    priceFaq4Q: "Que se passe-t-il si j\u2019annule ?",
+    priceFaq4A: "Annulation gratuite dans les 30 minutes. Apr\u00e8s, des frais de 10% s\u2019appliquent. Le reste est rembours\u00e9 sur votre portefeuille.",
+    priceFaq5Q: "Comment les prestataires sont-ils pay\u00e9s ?",
+    priceFaq5A: "Les prestataires re\u00e7oivent 85% du montant d\u00e8s que la mission est termin\u00e9e. Retrait possible \u00e0 tout moment via MoMo.",
+
+    // Live activity
+    liveActivity: "personnes consultent ServeLink en ce moment",
 
     // Videos
     videoClientTitle: "ServeLink en action \uD83C\uDFAC",
