@@ -14,6 +14,12 @@ const ALL_TESTIMONIALS = [
   { nameKey: "test7Name", roleKey: "test7Role", textKey: "test7Text", avatar: "SM", color: "#E85D04" },
   { nameKey: "test8Name", roleKey: "test8Role", textKey: "test8Text", avatar: "RN", color: "#007A3D" },
   { nameKey: "test9Name", roleKey: "test9Role", textKey: "test9Text", avatar: "DA", color: "#CE1126" },
+  { nameKey: "test10Name", roleKey: "test10Role", textKey: "test10Text", avatar: "FE", color: "#FCD116" },
+  { nameKey: "test11Name", roleKey: "test11Role", textKey: "test11Text", avatar: "BM", color: "#1B6B7B" },
+  { nameKey: "test12Name", roleKey: "test12Role", textKey: "test12Text", avatar: "GN", color: "#E85D04" },
+  { nameKey: "test13Name", roleKey: "test13Role", textKey: "test13Text", avatar: "LT", color: "#007A3D" },
+  { nameKey: "test14Name", roleKey: "test14Role", textKey: "test14Text", avatar: "MK", color: "#CE1126" },
+  { nameKey: "test15Name", roleKey: "test15Role", textKey: "test15Text", avatar: "OA", color: "#FCD116" },
 ];
 
 // Shuffle and pick 3 — different each page load
