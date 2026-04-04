@@ -5,7 +5,7 @@ import { useLang } from "./LanguageContext";
 import AnimateOnScroll from "./AnimateOnScroll";
 import { supabase } from "../lib/supabase";
 
-const CITIES = ["Douala", "Yaoundé", "Limbé", "Bafoussam", "Buea", "Mutengene", "Other"];
+const CITIES = ["Douala", "Yaoundé", "Limbé", "Bafoussam", "Buea", "Bamenda", "Mutengene", "Other"];
 
 export default function ShareThoughts() {
   const { t } = useLang();

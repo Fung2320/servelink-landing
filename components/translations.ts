@@ -66,7 +66,7 @@ export const translations = {
     phonePlaceholder: "Phone number",
     joinBtn: "Join Waitlist",
     successMsg: "You\u2019re on the list! We\u2019ll notify you when ServeLink launches.",
-    socialProof: "Join 100+ early members from Douala, Yaound\u00e9, Limb\u00e9 & Bafoussam",
+    socialProof: "Join 100+ early members from Douala, Yaound\u00e9, Limb\u00e9, Bafoussam & Bamenda",
     trustBadge1: "\uD83D\uDD12 Your data is safe & never shared",
     trustBadge2: "No spam. No credit card required.",
     privacyNote: "By signing up you agree to our",
@@ -171,6 +171,17 @@ export const translations = {
     shareSuccessSub: "An admin will review your testimonial shortly.",
     shareError: "Please fill in all fields and select a star rating.",
     shareErrorGeneric: "Something went wrong. Please try again.",
+
+    // Bamenda testimonials
+    test26Name: "Emilia B.",
+    test26Role: "Waiting list — Bamenda",
+    test26Text: "Bamenda is finally on the map! We always get left out of these apps. ServeLink including the Northwest Region means so much. Can't wait to book a cleaner without the usual drama!",
+    test27Name: "Julius N.",
+    test27Role: "Provider (waiting) — Bamenda",
+    test27Text: "I'm a plumber in Bamenda and right now it's only referrals. ServeLink will connect me with clients across the whole city. MoMo payments instead of cash disputes? This is what we've been waiting for!",
+    test28Name: "Frida T.",
+    test28Role: "Waiting list — Bamenda",
+    test28Text: "My mother needs home care but finding a trusted provider in Bamenda is impossible. ServeLink with verified providers and safe MoMo payments is exactly what the Northwest needs. Hurry and launch!",
 
     // Pricing FAQ
     pricingTitle: "Pricing & Fees",
@@ -286,7 +297,7 @@ export const translations = {
     successMsg:
       "Vous \u00eates sur la liste ! Nous vous pr\u00e9viendrons quand ServeLink sera disponible.",
     socialProof:
-      "Rejoignez 100+ membres de Douala, Yaound\u00e9, Limb\u00e9 & Bafoussam",
+      "Rejoignez 100+ membres de Douala, Yaound\u00e9, Limb\u00e9, Bafoussam & Bamenda",
     trustBadge1: "\uD83D\uDD12 Vos donn\u00e9es sont prot\u00e9g\u00e9es et jamais partag\u00e9es",
     trustBadge2: "Pas de spam. Pas de carte bancaire requise.",
     privacyNote: "En vous inscrivant, vous acceptez notre",
@@ -391,6 +402,17 @@ export const translations = {
     shareSuccessSub: "Un administrateur examinera votre t\u00e9moignage sous peu.",
     shareError: "Veuillez remplir tous les champs et s\u00e9lectionner une note.",
     shareErrorGeneric: "Une erreur est survenue. Veuillez r\u00e9essayer.",
+
+    // Bamenda testimonials
+    test26Name: "Emilia B.",
+    test26Role: "Liste d\u2019attente \u2014 Bamenda",
+    test26Text: "Bamenda est enfin sur la carte ! On est toujours oubli\u00e9s par ces applis. Que ServeLink inclue la R\u00e9gion du Nord-Ouest, \u00e7a veut dire beaucoup. J\u2019ai h\u00e2te de r\u00e9server sans les probl\u00e8mes habituels !",
+    test27Name: "Julius N.",
+    test27Role: "Prestataire (attente) \u2014 Bamenda",
+    test27Text: "Je suis plombier \u00e0 Bamenda et l\u00e0 c\u2019est que le bouche-\u00e0-oreille. ServeLink va me connecter avec des clients dans toute la ville. Paiements MoMo au lieu des disputes de cash ? C\u2019est ce qu\u2019on attendait !",
+    test28Name: "Frida T.",
+    test28Role: "Liste d\u2019attente \u2014 Bamenda",
+    test28Text: "Ma m\u00e8re a besoin d\u2019aide \u00e0 domicile mais trouver un prestataire de confiance \u00e0 Bamenda c\u2019est impossible. ServeLink avec des prestataires v\u00e9rifi\u00e9s et paiements MoMo, c\u2019est ce qu\u2019il faut au Nord-Ouest. Lancez vite !",
 
     // Pricing FAQ
     pricingTitle: "Tarifs et frais",

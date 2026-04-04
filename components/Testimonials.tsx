@@ -31,6 +31,9 @@ const ALL_TESTIMONIALS = [
   { nameKey: "test23Name", roleKey: "test23Role", textKey: "test23Text", avatar: "EN", color: "#1B6B7B" },
   { nameKey: "test24Name", roleKey: "test24Role", textKey: "test24Text", avatar: "JF", color: "#0E5E6B" },
   { nameKey: "test25Name", roleKey: "test25Role", textKey: "test25Text", avatar: "RN", color: "#1B6B7B" },
+  { nameKey: "test26Name", roleKey: "test26Role", textKey: "test26Text", avatar: "EB", color: "#0E5E6B" },
+  { nameKey: "test27Name", roleKey: "test27Role", textKey: "test27Text", avatar: "JN", color: "#1B6B7B" },
+  { nameKey: "test28Name", roleKey: "test28Role", textKey: "test28Text", avatar: "FT", color: "#0E5E6B" },
 ];
 
 interface CardData {
