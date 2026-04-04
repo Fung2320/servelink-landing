@@ -74,17 +74,17 @@ export const translations = {
     sslNote: "\uD83D\uDD10 256-bit SSL encrypted",
 
     // Testimonials
-    testimonialsTitle: "What People Are Saying",
-    testimonialsSub: "Early testers love ServeLink",
+    testimonialsTitle: "What Early Testers Are Saying",
+    testimonialsSub: "We gave beta access to a small group \u2014 here\u2019s their feedback",
     test1Name: "Ama M.",
-    test1Role: "Client \u2014 Douala",
-    test1Text: "I found a plumber in 10 minutes instead of 3 days. The price was fair and the provider showed up on time. This is what Cameroon needed.",
+    test1Role: "Beta tester \u2014 Douala",
+    test1Text: "I tested the app and I\u2019m already impressed. The interface is so clean and booking feels effortless. I can\u2019t wait for the full launch \u2014 this will change how we find services in Douala.",
     test2Name: "Ngong M.",
-    test2Role: "Provider \u2014 Yaound\u00e9",
-    test2Text: "I set up my profile in the morning and got my first job by afternoon. The 85% payout is much better than what I was getting before.",
+    test2Role: "Provider (beta) \u2014 Yaound\u00e9",
+    test2Text: "I signed up as a provider and the profile setup took 5 minutes. The 85% payout model is very fair. When this launches, I\u2019ll be ready to receive jobs from day one.",
     test3Name: "Jeannette F.",
-    test3Role: "Client \u2014 Limb\u00e9",
-    test3Text: "Paying with MoMo directly in the app is so convenient. No more carrying cash to pay the cleaner. And I feel safe knowing the providers are verified.",
+    test3Role: "Beta tester \u2014 Limb\u00e9",
+    test3Text: "Finally, an app built for Cameroon! MoMo payment, French and English, works even on slow internet. I\u2019ve already told all my friends to join the waitlist.",
 
     // Pricing FAQ
     pricingTitle: "Pricing & Fees",
@@ -208,17 +208,17 @@ export const translations = {
     sslNote: "\uD83D\uDD10 Chiffrement SSL 256 bits",
 
     // Testimonials
-    testimonialsTitle: "Ce qu\u2019on dit de nous",
-    testimonialsSub: "Les premiers utilisateurs adorent ServeLink",
+    testimonialsTitle: "Ce que disent nos premiers testeurs",
+    testimonialsSub: "Nous avons donn\u00e9 un acc\u00e8s b\u00eata \u00e0 un petit groupe \u2014 voici leurs retours",
     test1Name: "Ama M.",
-    test1Role: "Cliente \u2014 Douala",
-    test1Text: "J\u2019ai trouv\u00e9 un plombier en 10 minutes au lieu de 3 jours. Le prix \u00e9tait juste et le prestataire est arriv\u00e9 \u00e0 l\u2019heure. C\u2019est ce dont le Cameroun avait besoin.",
+    test1Role: "Testeuse b\u00eata \u2014 Douala",
+    test1Text: "J\u2019ai test\u00e9 l\u2019appli et je suis d\u00e9j\u00e0 impressionn\u00e9e. L\u2019interface est tr\u00e8s propre et r\u00e9server semble si simple. J\u2019ai h\u00e2te du lancement \u2014 \u00e7a va changer la fa\u00e7on dont on trouve des services \u00e0 Douala.",
     test2Name: "Ngong M.",
-    test2Role: "Prestataire \u2014 Yaound\u00e9",
-    test2Text: "J\u2019ai configur\u00e9 mon profil le matin et re\u00e7u ma premi\u00e8re mission l\u2019apr\u00e8s-midi. Les 85% de reversement sont bien mieux que ce que je gagnais avant.",
+    test2Role: "Prestataire (b\u00eata) \u2014 Yaound\u00e9",
+    test2Text: "Je me suis inscrit comme prestataire, le profil a pris 5 minutes. Le mod\u00e8le \u00e0 85% est tr\u00e8s juste. Au lancement, je serai pr\u00eat \u00e0 recevoir des missions d\u00e8s le premier jour.",
     test3Name: "Jeannette F.",
-    test3Role: "Cliente \u2014 Limb\u00e9",
-    test3Text: "Payer avec MoMo directement dans l\u2019appli, c\u2019est tellement pratique. Plus besoin de cash pour payer la femme de m\u00e9nage. Et les prestataires v\u00e9rifi\u00e9s, \u00e7a rassure.",
+    test3Role: "Testeuse b\u00eata \u2014 Limb\u00e9",
+    test3Text: "Enfin une appli faite pour le Cameroun ! Paiement MoMo, fran\u00e7ais et anglais, fonctionne m\u00eame sur r\u00e9seau lent. J\u2019ai d\u00e9j\u00e0 dit \u00e0 tous mes amis de rejoindre la liste d\u2019attente.",
 
     // Pricing FAQ
     pricingTitle: "Tarifs et frais",
