@@ -1,37 +1,30 @@
 "use client";
 
+import { useMemo } from "react";
 import { useLang } from "./LanguageContext";
 import AnimateOnScroll from "./AnimateOnScroll";
 
-const TESTIMONIALS = [
-  {
-    nameKey: "test1Name",
-    roleKey: "test1Role",
-    textKey: "test1Text",
-    rating: 5,
-    avatar: "AM",
-    color: "#1B6B7B",
-  },
-  {
-    nameKey: "test2Name",
-    roleKey: "test2Role",
-    textKey: "test2Text",
-    rating: 5,
-    avatar: "NM",
-    color: "#E85D04",
-  },
-  {
-    nameKey: "test3Name",
-    roleKey: "test3Role",
-    textKey: "test3Text",
-    rating: 5,
-    avatar: "JF",
-    color: "#007A3D",
-  },
+const ALL_TESTIMONIALS = [
+  { nameKey: "test1Name", roleKey: "test1Role", textKey: "test1Text", avatar: "AM", color: "#1B6B7B" },
+  { nameKey: "test2Name", roleKey: "test2Role", textKey: "test2Text", avatar: "NM", color: "#E85D04" },
+  { nameKey: "test3Name", roleKey: "test3Role", textKey: "test3Text", avatar: "JF", color: "#007A3D" },
+  { nameKey: "test4Name", roleKey: "test4Role", textKey: "test4Text", avatar: "PB", color: "#CE1126" },
+  { nameKey: "test5Name", roleKey: "test5Role", textKey: "test5Text", avatar: "EN", color: "#FCD116" },
+  { nameKey: "test6Name", roleKey: "test6Role", textKey: "test6Text", avatar: "CT", color: "#1B6B7B" },
+  { nameKey: "test7Name", roleKey: "test7Role", textKey: "test7Text", avatar: "SM", color: "#E85D04" },
+  { nameKey: "test8Name", roleKey: "test8Role", textKey: "test8Text", avatar: "RN", color: "#007A3D" },
+  { nameKey: "test9Name", roleKey: "test9Role", textKey: "test9Text", avatar: "DA", color: "#CE1126" },
 ];
+
+// Shuffle and pick 3 — different each page load
+function pickRandom(arr: typeof ALL_TESTIMONIALS, count: number) {
+  const shuffled = [...arr].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+}
 
 export default function Testimonials() {
   const { t } = useLang();
+  const selected = useMemo(() => pickRandom(ALL_TESTIMONIALS, 3), []);
 
   return (
     <section className="py-16 sm:py-20 bg-gray-50">
@@ -51,24 +44,17 @@ export default function Testimonials() {
         </AnimateOnScroll>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((item, i) => (
+          {selected.map((item, i) => (
             <AnimateOnScroll key={i}>
               <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                {/* Stars */}
                 <div className="flex gap-1 mb-4">
-                  {Array.from({ length: item.rating }).map((_, j) => (
-                    <span key={j} className="text-yellow-400 text-lg">
-                      ★
-                    </span>
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <span key={j} className="text-yellow-400 text-lg">★</span>
                   ))}
                 </div>
-
-                {/* Quote */}
                 <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
                   &ldquo;{t(item.textKey as any)}&rdquo;
                 </p>
-
-                {/* Author */}
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold"
@@ -77,12 +63,8 @@ export default function Testimonials() {
                     {item.avatar}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-navy">
-                      {t(item.nameKey as any)}
-                    </p>
-                    <p className="text-xs text-gray-400">
-                      {t(item.roleKey as any)}
-                    </p>
+                    <p className="text-sm font-semibold text-navy">{t(item.nameKey as any)}</p>
+                    <p className="text-xs text-gray-400">{t(item.roleKey as any)}</p>
                   </div>
                 </div>
               </div>
