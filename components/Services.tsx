@@ -4,18 +4,18 @@ import { useLang } from "./LanguageContext";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const services = [
-  { emoji: "\ud83d\udc85", en: "svcBeauty", fr: "svcBeauty" },
-  { emoji: "\ud83d\udc86", en: "svcWellness", fr: "svcWellness" },
-  { emoji: "\ud83c\udfe0", en: "svcHome", fr: "svcHome" },
-  { emoji: "\ud83e\uddf9", en: "svcCleaning", fr: "svcCleaning" },
-  { emoji: "\ud83d\udc76", en: "svcCare", fr: "svcCare" },
-  { emoji: "\ud83d\udcda", en: "svcEducation", fr: "svcEducation" },
-  { emoji: "\ud83d\ude97", en: "svcAutomotive", fr: "svcAutomotive" },
-  { emoji: "\ud83c\udf3f", en: "svcOutdoor", fr: "svcOutdoor" },
-  { emoji: "\ud83c\udf7d\ufe0f", en: "svcFood", fr: "svcFood" },
-  { emoji: "\ud83d\udcbb", en: "svcTech", fr: "svcTech" },
-  { emoji: "\ud83c\udfcb\ufe0f", en: "svcFitness", fr: "svcFitness" },
-  { emoji: "\ud83d\udce6", en: "svcMoving", fr: "svcMoving" },
+  { emoji: "💅🏽", en: "svcBeauty", fr: "svcBeauty" },
+  { emoji: "💆🏽", en: "svcWellness", fr: "svcWellness" },
+  { emoji: "🔧", en: "svcHome", fr: "svcHome" },
+  { emoji: "🧹", en: "svcCleaning", fr: "svcCleaning" },
+  { emoji: "👶🏽", en: "svcCare", fr: "svcCare" },
+  { emoji: "📚", en: "svcEducation", fr: "svcEducation" },
+  { emoji: "🚗", en: "svcAutomotive", fr: "svcAutomotive" },
+  { emoji: "🌿", en: "svcOutdoor", fr: "svcOutdoor" },
+  { emoji: "🍽️", en: "svcFood", fr: "svcFood" },
+  { emoji: "💻", en: "svcTech", fr: "svcTech" },
+  { emoji: "💪🏽", en: "svcFitness", fr: "svcFitness" },
+  { emoji: "📦", en: "svcMoving", fr: "svcMoving" },
 ] as const;
 
 export default function Services() {
