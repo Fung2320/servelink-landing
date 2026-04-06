@@ -72,6 +72,8 @@ export const translations = {
     privacyNote: "We respect your privacy. No spam. Unsubscribe anytime.",
     privacyLink: "Privacy Policy",
     privacyCheckbox: "I agree to the",
+    privacyCheckboxFull: "I have read and agree to the",
+    ageConfirmation: "I confirm I am 18 years or older",
     sslNote: "\uD83D\uDD10 256-bit SSL encrypted",
 
     // Testimonials (25 — carousel, 3 at a time)
@@ -220,6 +222,8 @@ export const translations = {
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms of Service",
     footerCookie: "Cookie Policy",
+    footerAcceptableUse: "Acceptable Use",
+    footerDisclaimer: "Disclaimer",
     footerMade: "Made with",
     footerIn: "in Cameroon",
     footerCopyright: "\u00a9 2026 ServeLink Company Limited. All rights reserved.",
@@ -305,6 +309,8 @@ export const translations = {
     privacyNote: "Nous respectons votre vie priv\u00e9e. Pas de spam. D\u00e9sinscription possible.",
     privacyLink: "Politique de confidentialit\u00e9",
     privacyCheckbox: "J\u2019accepte la",
+    privacyCheckboxFull: "J\u2019ai lu et j\u2019accepte la",
+    ageConfirmation: "Je confirme avoir 18 ans ou plus",
     sslNote: "\uD83D\uDD10 Chiffrement SSL 256 bits",
 
     // Testimonials (25 — carousel, 3 at a time)
@@ -453,6 +459,8 @@ export const translations = {
     footerPrivacy: "Politique de confidentialit\u00e9",
     footerTerms: "Conditions d\u2019utilisation",
     footerCookie: "Politique de cookies",
+    footerAcceptableUse: "Utilisation acceptable",
+    footerDisclaimer: "Avertissement",
     footerMade: "Fait avec",
     footerIn: "au Cameroun",
     footerCopyright:

@@ -116,30 +116,16 @@ export default function Footer() {
               {t("footerLegal")}
             </h4>
             <div className="flex flex-col gap-2">
-              <a
-                href="https://api.servelinkapp.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-white/70 hover:text-orange transition-colors"
-              >
-                {t("footerPrivacy")}
-              </a>
-              <a
-                href="https://api.servelinkapp.com/terms"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-white/70 hover:text-orange transition-colors"
-              >
-                {t("footerTerms")}
-              </a>
-              <a
-                href="https://api.servelinkapp.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-white/70 hover:text-orange transition-colors"
-              >
-                {t("footerCookie")}
-              </a>
+              <a href="https://api.servelinkapp.com/privacy" target="_blank" rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerPrivacy")}</a>
+              <a href="https://api.servelinkapp.com/terms" target="_blank" rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerTerms")}</a>
+              <a href="https://api.servelinkapp.com/cookies" target="_blank" rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerCookie")}</a>
+              <a href="https://api.servelinkapp.com/acceptable-use" target="_blank" rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerAcceptableUse")}</a>
+              <a href="https://api.servelinkapp.com/disclaimer" target="_blank" rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerDisclaimer")}</a>
             </div>
           </div>
 
@@ -153,6 +139,8 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/40">
             {t("footerCopyright")}
+            <br />
+            <span className="text-white/25 text-xs">OHADA SARL | Reg: TPPRR/RC/TIKO/2026/B/027</span>
           </p>
           <p className="text-sm text-white/50">
             {t("footerMade")} <span className="text-red-500">&#10084;&#65039;</span> {t("footerIn")} <span>&#127464;&#127474;</span>

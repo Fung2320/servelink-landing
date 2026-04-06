@@ -45,7 +45,7 @@ export default function CookieConsent() {
         <p className="text-sm text-gray-600 flex-1 leading-relaxed">
           {text}{" "}
           <a
-            href="https://api.servelinkapp.com/privacy"
+            href="https://api.servelinkapp.com/cookies"
             target="_blank"
             rel="noopener noreferrer"
             className="text-teal font-semibold underline hover:text-teal-dark transition-colors"
@@ -54,10 +54,16 @@ export default function CookieConsent() {
           </a>
           .
         </p>
-        <div className="flex gap-3 shrink-0">
+        <div className="flex gap-2 sm:gap-3 shrink-0 flex-wrap">
+          <button
+            onClick={() => { localStorage.setItem(STORAGE_KEY, "essential-only"); setVisible(false); }}
+            className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-500 bg-gray-50 hover:bg-gray-100 transition-colors"
+          >
+            {lang === "fr" ? "Refuser" : "Reject Non-Essential"}
+          </button>
           <button
             onClick={manage}
-            className="rounded-xl px-5 py-2.5 text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors"
+            className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors"
           >
             {manageLabel}
           </button>

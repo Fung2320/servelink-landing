@@ -16,6 +16,7 @@ export default function Waitlist() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [privacyChecked, setPrivacyChecked] = useState(false);
+  const [ageChecked, setAgeChecked] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -145,7 +146,7 @@ export default function Waitlist() {
                 )}
                 <button
                   type="submit"
-                  disabled={loading || !privacyChecked}
+                  disabled={loading || !privacyChecked || !ageChecked}
                   className="rounded-xl bg-orange px-6 py-3 text-base font-semibold text-white transition-all hover:bg-orange-dark hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
                 >
                   {loading ? (
@@ -162,7 +163,7 @@ export default function Waitlist() {
                 </button>
               </form>
 
-              {/* Privacy checkbox */}
+              {/* Privacy + Terms checkbox */}
               <label className="mt-4 flex items-start gap-3 cursor-pointer text-left">
                 <input
                   type="checkbox"
@@ -171,15 +172,25 @@ export default function Waitlist() {
                   className="mt-0.5 w-4 h-4 rounded accent-orange shrink-0"
                 />
                 <span className="text-xs text-white/60 leading-relaxed">
-                  {t("privacyCheckbox")}{" "}
-                  <a
-                    href="https://api.servelinkapp.com/privacy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:text-white/80 transition-colors"
-                  >
-                    {t("privacyLink")}
-                  </a>
+                  {t("privacyCheckboxFull")}{" "}
+                  <a href="https://api.servelinkapp.com/privacy" target="_blank" rel="noopener noreferrer"
+                    className="underline hover:text-white/80 transition-colors">{t("privacyLink")}</a>
+                  {" & "}
+                  <a href="https://api.servelinkapp.com/terms" target="_blank" rel="noopener noreferrer"
+                    className="underline hover:text-white/80 transition-colors">{t("footerTerms")}</a>
+                </span>
+              </label>
+
+              {/* Age confirmation checkbox */}
+              <label className="mt-2 flex items-start gap-3 cursor-pointer text-left">
+                <input
+                  type="checkbox"
+                  checked={ageChecked}
+                  onChange={(e) => setAgeChecked(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 rounded accent-orange shrink-0"
+                />
+                <span className="text-xs text-white/60 leading-relaxed">
+                  {t("ageConfirmation")}
                 </span>
               </label>
 
