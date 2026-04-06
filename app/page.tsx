@@ -17,6 +17,7 @@ import CookieConsent from "@/components/CookieConsent";
 import Countdown from "@/components/Countdown";
 import AppScreenshots from "@/components/AppScreenshots";
 import FAQ from "@/components/FAQ";
+import ProviderRecruitment from "@/components/ProviderRecruitment";
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
           src="/videos/tutorial-client.mp4"
         />
         <FAQ />
+        <ProviderRecruitment />
         <Testimonials />
         <ShareThoughts />
         <Waitlist />
