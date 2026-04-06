@@ -15,6 +15,7 @@ import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import Countdown from "@/components/Countdown";
+import AppScreenshots from "@/components/AppScreenshots";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Countdown />
         <Services />
         <Features />
+        <AppScreenshots />
         <VideoSection
           titleKey="videoProviderTitle"
           subtitleKey="videoProviderSub"
