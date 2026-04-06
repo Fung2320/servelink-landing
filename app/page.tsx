@@ -24,6 +24,10 @@ import LiveActivity from "@/components/LiveActivity";
 import CookieConsent from "@/components/CookieConsent";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BackToTop from "@/components/BackToTop";
+import RecentSignupToast from "@/components/RecentSignupToast";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import ScrollProgress from "@/components/ScrollProgress";
+import MobileStickyJoin from "@/components/MobileStickyJoin";
 
 export default function Home() {
   return (
@@ -61,8 +65,12 @@ export default function Home() {
       <Footer />
       <LiveActivity />
       <CookieConsent />
+      <ScrollProgress />
       <WhatsAppButton />
       <BackToTop />
+      <RecentSignupToast />
+      <ExitIntentPopup />
+      <MobileStickyJoin />
     </LanguageProvider>
   );
 }
