@@ -132,6 +132,14 @@ export default function Footer() {
               >
                 {t("footerTerms")}
               </a>
+              <a
+                href="https://api.servelinkapp.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-orange transition-colors"
+              >
+                {t("footerCookie")}
+              </a>
             </div>
           </div>
 

@@ -13,6 +13,7 @@ import PricingFAQ from "@/components/PricingFAQ";
 import LiveActivity from "@/components/LiveActivity";
 import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
       </main>
       <Footer />
       <LiveActivity />
+      <CookieConsent />
     </LanguageProvider>
   );
 }

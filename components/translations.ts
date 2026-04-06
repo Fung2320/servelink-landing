@@ -69,8 +69,9 @@ export const translations = {
     socialProof: "Join 100+ early members from Douala, Yaound\u00e9, Limb\u00e9, Bafoussam & Bamenda",
     trustBadge1: "\uD83D\uDD12 Your data is safe & never shared",
     trustBadge2: "No spam. No credit card required.",
-    privacyNote: "By signing up you agree to our",
+    privacyNote: "We respect your privacy. No spam. Unsubscribe anytime.",
     privacyLink: "Privacy Policy",
+    privacyCheckbox: "I agree to the",
     sslNote: "\uD83D\uDD10 256-bit SSL encrypted",
 
     // Testimonials (25 — carousel, 3 at a time)
@@ -218,6 +219,7 @@ export const translations = {
     footerLegal: "Legal",
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms of Service",
+    footerCookie: "Cookie Policy",
     footerMade: "Made with",
     footerIn: "in Cameroon",
     footerCopyright: "\u00a9 2026 ServeLink Company Limited. All rights reserved.",
@@ -300,8 +302,9 @@ export const translations = {
       "Rejoignez 100+ membres de Douala, Yaound\u00e9, Limb\u00e9, Bafoussam & Bamenda",
     trustBadge1: "\uD83D\uDD12 Vos donn\u00e9es sont prot\u00e9g\u00e9es et jamais partag\u00e9es",
     trustBadge2: "Pas de spam. Pas de carte bancaire requise.",
-    privacyNote: "En vous inscrivant, vous acceptez notre",
+    privacyNote: "Nous respectons votre vie priv\u00e9e. Pas de spam. D\u00e9sinscription possible.",
     privacyLink: "Politique de confidentialit\u00e9",
+    privacyCheckbox: "J\u2019accepte la",
     sslNote: "\uD83D\uDD10 Chiffrement SSL 256 bits",
 
     // Testimonials (25 — carousel, 3 at a time)
@@ -449,6 +452,7 @@ export const translations = {
     footerLegal: "L\u00e9gal",
     footerPrivacy: "Politique de confidentialit\u00e9",
     footerTerms: "Conditions d\u2019utilisation",
+    footerCookie: "Politique de cookies",
     footerMade: "Fait avec",
     footerIn: "au Cameroun",
     footerCopyright:
