@@ -18,6 +18,7 @@ import Countdown from "@/components/Countdown";
 import AppScreenshots from "@/components/AppScreenshots";
 import FAQ from "@/components/FAQ";
 import ProviderRecruitment from "@/components/ProviderRecruitment";
+import EscrowExplainer from "@/components/EscrowExplainer";
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
           subtitleKey="videoClientSub"
           src="/videos/tutorial-client.mp4"
         />
+        <EscrowExplainer />
         <FAQ />
         <ProviderRecruitment />
         <Testimonials />
