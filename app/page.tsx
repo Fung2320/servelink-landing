@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import Countdown from "@/components/Countdown";
 import AppScreenshots from "@/components/AppScreenshots";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -39,9 +40,9 @@ export default function Home() {
           subtitleKey="videoClientSub"
           src="/videos/tutorial-client.mp4"
         />
+        <FAQ />
         <Testimonials />
         <ShareThoughts />
-        <PricingFAQ />
         <Waitlist />
       </main>
       <Footer />
