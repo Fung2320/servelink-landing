@@ -6,7 +6,7 @@ import AnimateOnScroll from "./AnimateOnScroll";
 import VideoModal from "./VideoModal";
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [showVideo, setShowVideo] = useState(false);
 
   return (
@@ -28,6 +28,20 @@ export default function Hero() {
           >
             {t("heroTitle")}
           </h1>
+        </AnimateOnScroll>
+
+        <AnimateOnScroll>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 px-3.5 py-1.5 text-sm font-medium text-white/90">
+              🧠 {lang === "fr" ? "IA int\u00e9gr\u00e9e" : "AI-powered"}
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 px-3.5 py-1.5 text-sm font-medium text-white/90">
+              💳 MoMo &amp; Orange Money
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 px-3.5 py-1.5 text-sm font-medium text-white/90">
+              🛒 118+ {lang === "fr" ? "services" : "services"}
+            </span>
+          </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll>

@@ -200,6 +200,18 @@ export const translations = {
     priceFaq5Q: "How do providers get paid?",
     priceFaq5A: "Providers receive 85% of the booking amount directly in their ServeLink Wallet as soon as the job is marked complete. They can withdraw anytime via MoMo.",
 
+    // AI Features section
+    aiSectionTitle: "Powered by AI",
+    aiSectionSubtitle: "ServeLink uses Claude AI to make finding and booking services faster, smarter, and more reliable.",
+    aiFeat1Title: "Smart Search",
+    aiFeat1Desc: "Describe what you need in plain English or French. AI parses your request and returns ranked providers instantly.",
+    aiFeat2Title: "Photo Service ID",
+    aiFeat2Desc: "Take a photo of your problem. AI identifies the service you need and suggests the right category automatically.",
+    aiFeat3Title: "AI Assistant",
+    aiFeat3Desc: "Chat with our AI for instant answers about pricing, booking, cities, and services — in French or English.",
+    aiFeat4Title: "Smart Matching",
+    aiFeat4Desc: "Providers are scored 0–100 by rating, verification, proximity, and availability so you always get the best match.",
+
     // Live activity
     liveActivity: "people browsing ServeLink right now",
 
@@ -436,6 +448,18 @@ export const translations = {
     priceFaq4A: "Annulation gratuite dans les 30 minutes. Apr\u00e8s, des frais de 10% s\u2019appliquent. Le reste est rembours\u00e9 sur votre portefeuille.",
     priceFaq5Q: "Comment les prestataires sont-ils pay\u00e9s ?",
     priceFaq5A: "Les prestataires re\u00e7oivent 85% du montant d\u00e8s que la mission est termin\u00e9e. Retrait possible \u00e0 tout moment via MoMo.",
+
+    // AI Features section
+    aiSectionTitle: "Propuls\u00e9 par l\u2019IA",
+    aiSectionSubtitle: "ServeLink utilise Claude AI pour rendre la recherche et la r\u00e9servation de services plus rapides, plus intelligentes et plus fiables.",
+    aiFeat1Title: "Recherche Intelligente",
+    aiFeat1Desc: "D\u00e9crivez votre besoin en fran\u00e7ais ou en anglais. L\u2019IA analyse votre demande et vous retourne les meilleurs prestataires instantan\u00e9ment.",
+    aiFeat2Title: "Identification Photo",
+    aiFeat2Desc: "Prenez une photo de votre probl\u00e8me. L\u2019IA identifie le service dont vous avez besoin et sugg\u00e8re automatiquement la bonne cat\u00e9gorie.",
+    aiFeat3Title: "Assistant IA",
+    aiFeat3Desc: "Discutez avec notre IA pour des r\u00e9ponses instantan\u00e9es sur les prix, la r\u00e9servation, les villes et les services \u2014 en fran\u00e7ais ou en anglais.",
+    aiFeat4Title: "Matching Intelligent",
+    aiFeat4Desc: "Les prestataires sont not\u00e9s de 0 \u00e0 100 selon leur \u00e9valuation, v\u00e9rification, proximit\u00e9 et disponibilit\u00e9 pour toujours vous proposer le meilleur profil.",
 
     // Live activity
     liveActivity: "personnes consultent ServeLink en ce moment",

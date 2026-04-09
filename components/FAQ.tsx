@@ -13,6 +13,18 @@ interface FAQItem {
 
 const CLIENT_FAQS: FAQItem[] = [
   {
+    qEn: "How does AI search work?",
+    qFr: "Comment fonctionne la recherche IA ?",
+    aEn: "Just describe what you need in plain language — for example, \"find a plumber in Douala under 5000 XAF\". Our AI (powered by Claude) understands your request, extracts the service type, city, and budget, then returns ranked providers that match. No need to navigate menus.",
+    aFr: "D\u00e9crivez simplement ce dont vous avez besoin en langage naturel \u2014 par exemple \u00ab trouver un plombier \u00e0 Douala pour moins de 5 000 XAF \u00bb. Notre IA (bas\u00e9e sur Claude) comprend votre demande, extrait le type de service, la ville et le budget, puis retourne les meilleurs prestataires correspondants. Pas besoin de naviguer dans des menus.",
+  },
+  {
+    qEn: "Is my payment secure?",
+    qFr: "Mon paiement est-il s\u00e9curis\u00e9 ?",
+    aEn: "Yes. ServeLink uses an escrow system: when you book, your payment is held securely in your ServeLink Wallet. It is only released to the provider after you confirm the job is complete. If something goes wrong, you can raise a dispute within 24 hours and receive a full refund.",
+    aFr: "Oui. ServeLink utilise un syst\u00e8me d\u2019escrow : lorsque vous r\u00e9servez, votre paiement est s\u00e9curis\u00e9 dans votre portefeuille ServeLink. Il n\u2019est lib\u00e9r\u00e9 au prestataire qu\u2019apr\u00e8s votre confirmation. En cas de probl\u00e8me, vous pouvez signaler un litige dans les 24 heures et obtenir un remboursement complet.",
+  },
+  {
     qEn: "Is ServeLink free to use?",
     qFr: "ServeLink est-il gratuit ?",
     aEn: "Yes! Creating an account and browsing providers is completely free. You only pay when you book a service.",
