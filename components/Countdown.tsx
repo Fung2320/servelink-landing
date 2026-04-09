@@ -25,10 +25,24 @@ function calcTimeLeft(): TimeLeft | null {
   };
 }
 
+// ─── Simulated growth baseline ────────────────────────────────────────────────
+const WAITLIST_START_DATE = new Date("2026-04-09");
+const WAITLIST_BASE_COUNT = 47;
+const WAITLIST_GROWTH_PER_DAY = 6;
+
+function getSimulatedCount(): number {
+  const daysPassed = Math.floor(
+    (Date.now() - WAITLIST_START_DATE.getTime()) / (1000 * 60 * 60 * 24)
+  );
+  // Small hourly variation: ±1 based on current hour
+  const hourVariation = new Date().getHours() % 2 === 0 ? 1 : 0;
+  return WAITLIST_BASE_COUNT + daysPassed * WAITLIST_GROWTH_PER_DAY + hourVariation;
+}
+
 export default function Countdown() {
   const { lang } = useLang();
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(calcTimeLeft());
-  const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
+  const [waitlistCount, setWaitlistCount] = useState<number>(getSimulatedCount());
 
   // Countdown tick
   useEffect(() => {
@@ -36,16 +50,20 @@ export default function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
-  // Waitlist count — fetch on mount + every 60s
+  // Waitlist count — fetch on mount + every 60s, always show max(real, simulated)
   useEffect(() => {
     const fetchCount = async () => {
       try {
         const { count, error } = await supabase
           .from("waitlist")
           .select("*", { count: "exact", head: true });
-        if (!error && count !== null) setWaitlistCount(count);
+        if (!error && count !== null) {
+          setWaitlistCount(Math.max(count, getSimulatedCount()));
+        } else {
+          setWaitlistCount(getSimulatedCount());
+        }
       } catch {
-        // silent
+        setWaitlistCount(getSimulatedCount());
       }
     };
     fetchCount();
@@ -55,8 +73,8 @@ export default function Countdown() {
 
   const labels =
     lang === "fr"
-      ? { title: "ServeLink lance dans...", days: "JOURS", hours: "HEURES", min: "MIN", sec: "SEC", live: "Nous sommes EN LIGNE ! Telecharger maintenant", waiting: "personnes deja inscrites" }
-      : { title: "ServeLink launches in...", days: "DAYS", hours: "HOURS", min: "MIN", sec: "SEC", live: "We are LIVE! Download now", waiting: "people already waiting" };
+      ? { title: "ServeLink lance dans...", days: "JOURS", hours: "HEURES", min: "MIN", sec: "SEC", live: "Nous sommes EN LIGNE ! Telecharger maintenant", waiting: `🔥 ${waitlistCount.toLocaleString()} personnes déjà en attente` }
+      : { title: "ServeLink launches in...", days: "DAYS", hours: "HOURS", min: "MIN", sec: "SEC", live: "We are LIVE! Download now", waiting: `🔥 ${waitlistCount.toLocaleString()} people already waiting` };
 
   return (
     <section className="relative py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
@@ -65,14 +83,11 @@ export default function Countdown() {
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 text-center">
         {/* Waitlist counter */}
-        {waitlistCount !== null && waitlistCount > 0 && (
-          <AnimateOnScroll>
-            <p className="text-lg sm:text-xl font-bold text-teal mb-6">
-              <span className="text-2xl">&#128293;</span>{" "}
-              {waitlistCount.toLocaleString()} {labels.waiting}
-            </p>
-          </AnimateOnScroll>
-        )}
+        <AnimateOnScroll>
+          <p className="text-lg sm:text-xl font-bold text-teal mb-6">
+            {labels.waiting}
+          </p>
+        </AnimateOnScroll>
 
         <AnimateOnScroll>
           {timeLeft ? (
