@@ -77,14 +77,14 @@ export default function Countdown() {
       : { title: "ServeLink launches in...", days: "DAYS", hours: "HOURS", min: "MIN", sec: "SEC", live: "We are LIVE! Download now", waiting: `🔥 ${waitlistCount.toLocaleString()} people already waiting` };
 
   return (
-    <section className="relative py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="relative py-16 sm:py-20 bg-gradient-to-b from-[#fcf9f8] to-[#f6f3f2] overflow-hidden">
       {/* Subtle accent dots */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-teal/5 blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#00342a]/5 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 text-center">
         {/* Waitlist counter */}
         <AnimateOnScroll>
-          <p className="text-lg sm:text-xl font-bold text-teal mb-6">
+          <p className="text-lg sm:text-xl font-bold text-[#00342a] mb-6">
             {labels.waiting}
           </p>
         </AnimateOnScroll>
@@ -93,7 +93,7 @@ export default function Countdown() {
           {timeLeft ? (
             <>
               <h2
-                className="text-2xl sm:text-3xl font-bold text-navy mb-8"
+                className="text-2xl sm:text-3xl font-bold text-[#1b1b1b] mb-8"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {labels.title}
@@ -107,12 +107,12 @@ export default function Countdown() {
                   { value: timeLeft.seconds, label: labels.sec },
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col items-center">
-                    <div className="w-[72px] h-[80px] sm:w-[90px] sm:h-[96px] rounded-2xl bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center shadow-lg shadow-teal/20">
+                    <div className="w-[72px] h-[80px] sm:w-[90px] sm:h-[96px] rounded-2xl bg-gradient-to-br from-[#00342a] to-[#004d3f] flex items-center justify-center shadow-lg shadow-[#1b1b1b]/[0.06]">
                       <span className="text-3xl sm:text-4xl font-black text-white tabular-nums">
                         {String(item.value).padStart(2, "0")}
                       </span>
                     </div>
-                    <span className="mt-2 text-[11px] sm:text-xs font-bold tracking-widest text-orange">
+                    <span className="mt-2 text-[11px] sm:text-xs font-bold tracking-widest text-[#735c00]">
                       {item.label}
                     </span>
                   </div>
@@ -128,7 +128,7 @@ export default function Countdown() {
             </>
           ) : (
             <div className="py-8">
-              <p className="text-3xl sm:text-4xl font-black text-teal">
+              <p className="text-3xl sm:text-4xl font-black text-[#00342a]">
                 {labels.live} <span className="text-4xl">&#127881;</span>
               </p>
             </div>

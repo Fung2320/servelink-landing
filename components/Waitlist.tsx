@@ -67,10 +67,10 @@ export default function Waitlist() {
   return (
     <section id="waitlist" className="relative py-20 sm:py-28 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-teal-dark" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00342a] via-[#004d3f] to-[#004d3f]" />
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-teal blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-orange blur-3xl" />
+        <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-[#00342a] blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-[#fecc00] blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
@@ -123,8 +123,8 @@ export default function Waitlist() {
           ) : (
             <>
             {/* Scarcity banner */}
-            <div className="mb-4 rounded-xl bg-orange/20 backdrop-blur-sm px-4 py-2.5 text-center">
-              <p className="text-sm font-bold text-orange">
+            <div className="mb-4 rounded-xl bg-[#fecc00]/20 backdrop-blur-sm px-4 py-2.5 text-center">
+              <p className="text-sm font-bold text-[#735c00]">
                 &#9889; {spotsLeft > 0
                   ? (lang === "fr"
                     ? `Seulement ${spotsLeft} places de membres fondateurs restantes`
@@ -154,7 +154,7 @@ export default function Waitlist() {
                   onClick={() => setTab("email")}
                   className={`flex-1 rounded-lg py-2.5 text-sm font-medium transition-all ${
                     tab === "email"
-                      ? "bg-white text-navy shadow-sm"
+                      ? "bg-white text-[#1b1b1b] shadow-sm"
                       : "text-white/70 hover:text-white"
                   }`}
                 >
@@ -164,7 +164,7 @@ export default function Waitlist() {
                   onClick={() => setTab("phone")}
                   className={`flex-1 rounded-lg py-2.5 text-sm font-medium transition-all ${
                     tab === "phone"
-                      ? "bg-white text-navy shadow-sm"
+                      ? "bg-white text-[#1b1b1b] shadow-sm"
                       : "text-white/70 hover:text-white"
                   }`}
                 >
@@ -185,7 +185,7 @@ export default function Waitlist() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder={t("namePlaceholder")}
-                className="w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent mb-3"
+                className="w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#fecc00] focus:border-transparent mb-3"
               />
 
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -196,10 +196,10 @@ export default function Waitlist() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t("emailPlaceholder")}
-                    className="flex-1 rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
+                    className="flex-1 rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#fecc00] focus:border-transparent"
                   />
                 ) : (
-                  <div className="flex-1 flex items-center rounded-xl bg-white/10 border border-white/20 overflow-hidden focus-within:ring-2 focus-within:ring-orange">
+                  <div className="flex-1 flex items-center rounded-xl bg-white/10 border border-white/20 overflow-hidden focus-within:ring-2 focus-within:ring-[#fecc00]">
                     <span className="pl-4 pr-2 text-white/60 text-sm font-medium">
                       +237
                     </span>
@@ -218,7 +218,7 @@ export default function Waitlist() {
                 <button
                   type="submit"
                   disabled={loading || !privacyChecked || !ageChecked}
-                  className="rounded-xl bg-orange px-6 py-3 text-base font-semibold text-white transition-all hover:bg-orange-dark hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
+                  className="rounded-xl bg-[#fecc00] px-6 py-3 text-base font-semibold text-[#1b1b1b] transition-all hover:bg-[#d4ad00] hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
                 >
                   {loading ? (
                     <span className="flex items-center justify-center gap-2">
@@ -240,7 +240,7 @@ export default function Waitlist() {
                   type="checkbox"
                   checked={privacyChecked}
                   onChange={(e) => setPrivacyChecked(e.target.checked)}
-                  className="mt-0.5 w-4 h-4 rounded accent-orange shrink-0"
+                  className="mt-0.5 w-4 h-4 rounded accent-[#fecc00] shrink-0"
                 />
                 <span className="text-xs text-white/60 leading-relaxed">
                   {t("privacyCheckboxFull")}{" "}
@@ -258,7 +258,7 @@ export default function Waitlist() {
                   type="checkbox"
                   checked={ageChecked}
                   onChange={(e) => setAgeChecked(e.target.checked)}
-                  className="mt-0.5 w-4 h-4 rounded accent-orange shrink-0"
+                  className="mt-0.5 w-4 h-4 rounded accent-[#fecc00] shrink-0"
                 />
                 <span className="text-xs text-white/60 leading-relaxed">
                   {t("ageConfirmation")}

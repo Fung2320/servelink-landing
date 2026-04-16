@@ -94,14 +94,14 @@ function AccordionItem({ item, lang, open, onToggle }: { item: FAQItem; lang: st
   const a = lang === "fr" ? item.aFr : item.aEn;
 
   return (
-    <div className="rounded-2xl bg-white shadow-sm shadow-black/[0.04] overflow-hidden transition-all">
+    <div className="rounded-2xl bg-white shadow-sm shadow-[#1b1b1b]/[0.06] overflow-hidden transition-all">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-gray-50/50 transition-colors"
+        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-[#fcf9f8]/50 transition-colors"
       >
-        <span className="text-[15px] font-semibold text-navy leading-snug">{q}</span>
+        <span className="text-[15px] font-semibold text-[#1b1b1b] leading-snug">{q}</span>
         <span
-          className={`shrink-0 w-7 h-7 rounded-full bg-teal/10 flex items-center justify-center text-teal transition-transform duration-300 ${
+          className={`shrink-0 w-7 h-7 rounded-full bg-[#00342a]/10 flex items-center justify-center text-[#00342a] transition-transform duration-300 ${
             open ? "rotate-180" : ""
           }`}
         >
@@ -115,7 +115,7 @@ function AccordionItem({ item, lang, open, onToggle }: { item: FAQItem; lang: st
           open ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="px-5 pb-5 text-sm text-gray-500 leading-relaxed">{a}</p>
+        <p className="px-5 pb-5 text-sm text-[#4f4f4f] leading-relaxed">{a}</p>
       </div>
     </div>
   );
@@ -133,12 +133,12 @@ export default function FAQ() {
   const faqs = tab === "client" ? CLIENT_FAQS : PROVIDER_FAQS;
 
   return (
-    <section className="py-16 sm:py-24 bg-gray-50">
+    <section className="py-16 sm:py-24 bg-[#fcf9f8]">
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="text-center mb-10">
             <h2
-              className="text-3xl sm:text-4xl font-bold text-navy"
+              className="text-3xl sm:text-4xl font-bold text-[#1b1b1b]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {title} <span className="text-3xl">&#10067;</span>
@@ -149,13 +149,13 @@ export default function FAQ() {
         {/* Tabs */}
         <AnimateOnScroll>
           <div className="flex justify-center mb-8">
-            <div className="inline-flex rounded-xl bg-white p-1 shadow-sm shadow-black/[0.04]">
+            <div className="inline-flex rounded-xl bg-white p-1 shadow-sm shadow-[#1b1b1b]/[0.06]">
               <button
                 onClick={() => { setTab("client"); setOpenIndex(0); }}
                 className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all ${
                   tab === "client"
-                    ? "bg-teal text-white shadow-md shadow-teal/20"
-                    : "text-gray-500 hover:text-navy"
+                    ? "bg-[#00342a] text-white shadow-md shadow-[#1b1b1b]/[0.06]"
+                    : "text-[#4f4f4f] hover:text-[#1b1b1b]"
                 }`}
               >
                 &#128100; {clientTab}
@@ -164,8 +164,8 @@ export default function FAQ() {
                 onClick={() => { setTab("provider"); setOpenIndex(0); }}
                 className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all ${
                   tab === "provider"
-                    ? "bg-teal text-white shadow-md shadow-teal/20"
-                    : "text-gray-500 hover:text-navy"
+                    ? "bg-[#00342a] text-white shadow-md shadow-[#1b1b1b]/[0.06]"
+                    : "text-[#4f4f4f] hover:text-[#1b1b1b]"
                 }`}
               >
                 &#128119; {providerTab}

@@ -26,7 +26,7 @@ export default function Services() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-14">
           <h2
-            className="text-3xl sm:text-4xl font-bold text-navy mb-4"
+            className="text-3xl sm:text-4xl font-bold text-[#1b1b1b] mb-4"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("servicesTitle")}
@@ -41,12 +41,12 @@ export default function Services() {
             {services.map((svc) => (
               <div
                 key={svc.en}
-                className="group flex flex-col items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:border-teal/30 hover:bg-teal/5 cursor-default"
+                className="group flex flex-col items-center justify-center rounded-2xl bg-[#fcf9f8] border border-[#1b1b1b]/10 p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:border-[#00342a]/30 hover:bg-[#00342a]/5 cursor-default"
               >
                 <span className="text-3xl sm:text-4xl mb-3 transition-transform duration-300 group-hover:scale-110">
                   {svc.emoji}
                 </span>
-                <p className="text-sm font-semibold text-navy text-center leading-snug">
+                <p className="text-sm font-semibold text-[#1b1b1b] text-center leading-snug">
                   {t(svc.en)}
                 </p>
               </div>

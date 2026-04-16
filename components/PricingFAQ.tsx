@@ -17,18 +17,18 @@ const FaqItem = ({ q, a }: { q: string; a: string }) => {
   return (
     <button
       onClick={() => setOpen(!open)}
-      className="w-full text-left bg-white rounded-xl border border-gray-100 px-6 py-5 shadow-sm hover:shadow-md transition-all"
+      className="w-full text-left bg-white rounded-xl border border-[#1b1b1b]/10 px-6 py-5 shadow-sm hover:shadow-md transition-all"
     >
       <div className="flex items-center justify-between gap-4">
-        <span className="text-sm sm:text-base font-semibold text-navy">
+        <span className="text-sm sm:text-base font-semibold text-[#1b1b1b]">
           {q}
         </span>
-        <span className="text-teal text-xl font-bold flex-shrink-0">
+        <span className="text-[#00342a] text-xl font-bold flex-shrink-0">
           {open ? "−" : "+"}
         </span>
       </div>
       {open && (
-        <p className="mt-3 text-sm text-gray-500 leading-relaxed">{a}</p>
+        <p className="mt-3 text-sm text-[#4f4f4f] leading-relaxed">{a}</p>
       )}
     </button>
   );
@@ -43,12 +43,12 @@ export default function PricingFAQ() {
         <AnimateOnScroll>
           <div className="text-center mb-10">
             <h2
-              className="text-2xl sm:text-3xl font-bold text-navy mb-3"
+              className="text-2xl sm:text-3xl font-bold text-[#1b1b1b] mb-3"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {t("pricingTitle" as any)}
             </h2>
-            <p className="text-base text-gray-500">
+            <p className="text-base text-[#4f4f4f]">
               {t("pricingSub" as any)}
             </p>
           </div>

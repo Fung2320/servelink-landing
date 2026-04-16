@@ -56,14 +56,14 @@ export default function ReferralSection() {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#f6f3f2] to-[#fcf9f8]">
       <div className="mx-auto max-w-xl px-4 sm:px-6 text-center">
         <AnimateOnScroll>
-          <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1b1b1b] mb-3" style={{ fontFamily: "var(--font-heading)" }}>
             {fr ? "Parrainez un ami, b\u00e9n\u00e9ficiez tous les deux d\u2019un acc\u00e8s prioritaire" : "Refer a friend, both get priority access"}{" "}
             <span className="text-2xl">{"\uD83C\uDF81"}</span>
           </h2>
-          <p className="text-gray-500 mb-2 text-sm">
+          <p className="text-[#4f4f4f] mb-2 text-sm">
             {fr
               ? "Vous et votre ami obtenez tous les deux le statut de membre fondateur"
               : "You + your friend both get founding member status"}
@@ -71,7 +71,7 @@ export default function ReferralSection() {
         </AnimateOnScroll>
 
         <AnimateOnScroll>
-          <div className="mt-8 rounded-2xl bg-white shadow-lg shadow-black/[0.04] p-6 sm:p-8">
+          <div className="mt-8 rounded-2xl bg-white shadow-lg shadow-[#1b1b1b]/[0.06] p-6 sm:p-8">
             {!refCode ? (
               <form onSubmit={handleGenerate} className="flex flex-col sm:flex-row gap-3">
                 <input
@@ -80,30 +80,30 @@ export default function ReferralSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={fr ? "Votre email" : "Your email"}
-                  className="flex-1 rounded-xl border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+                  className="flex-1 rounded-xl border border-[#1b1b1b]/15 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#00342a] focus:border-transparent"
                 />
                 <button
                   type="submit"
-                  className="rounded-xl bg-orange px-6 py-3 text-sm font-bold text-white hover:bg-orange-dark transition-colors whitespace-nowrap"
+                  className="rounded-xl bg-[#fecc00] px-6 py-3 text-sm font-bold text-[#1b1b1b] hover:bg-[#d4ad00] transition-colors whitespace-nowrap"
                 >
                   {fr ? "G\u00e9n\u00e9rer mon lien" : "Generate my link"}
                 </button>
               </form>
             ) : (
               <div className="space-y-4">
-                <p className="text-sm font-semibold text-navy">
+                <p className="text-sm font-semibold text-[#1b1b1b]">
                   {fr ? "Partagez ce lien avec vos amis :" : "Share this link with friends:"}
                 </p>
                 {/* Link box */}
-                <div className="flex items-center gap-2 rounded-xl bg-gray-50 border border-gray-200 p-2">
+                <div className="flex items-center gap-2 rounded-xl bg-[#fcf9f8] border border-[#1b1b1b]/15 p-2">
                   <input
                     readOnly
                     value={refLink}
-                    className="flex-1 bg-transparent text-sm text-navy font-mono px-2 focus:outline-none"
+                    className="flex-1 bg-transparent text-sm text-[#1b1b1b] font-mono px-2 focus:outline-none"
                   />
                   <button
                     onClick={copyLink}
-                    className="rounded-lg bg-teal px-4 py-2 text-xs font-bold text-white hover:bg-teal-dark transition-colors whitespace-nowrap"
+                    className="rounded-lg bg-[#00342a] px-4 py-2 text-xs font-bold text-white hover:bg-[#004d3f] transition-colors whitespace-nowrap"
                   >
                     {copied ? "\u2713" : fr ? "Copier" : "Copy"}
                   </button>
@@ -116,7 +116,7 @@ export default function ReferralSection() {
                   <button onClick={shareFacebook} className="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 transition-transform" aria-label="Facebook">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                   </button>
-                  <button onClick={shareTwitter} className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white hover:scale-110 transition-transform" aria-label="X">
+                  <button onClick={shareTwitter} className="w-10 h-10 rounded-full bg-[#1b1b1b] flex items-center justify-center text-white hover:scale-110 transition-transform" aria-label="X">
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                   </button>
                 </div>

@@ -25,7 +25,7 @@ export default function VideoModal({ src, isOpen, onClose }: VideoModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#1b1b1b]/80 backdrop-blur-sm p-4"
       onClick={onClose}
     >
       <div
@@ -34,7 +34,7 @@ export default function VideoModal({ src, isOpen, onClose }: VideoModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/50 text-white flex items-center justify-center text-lg font-bold hover:bg-black/70 transition-colors"
+          className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-[#1b1b1b]/50 text-white flex items-center justify-center text-lg font-bold hover:bg-[#1b1b1b]/70 transition-colors"
         >
           &times;
         </button>

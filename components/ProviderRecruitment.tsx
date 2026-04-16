@@ -35,10 +35,10 @@ export default function ProviderRecruitment() {
   };
 
   return (
-    <section className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-br from-[#1B6B7B] via-[#185E6C] to-[#0F3E48]">
+    <section className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-br from-[#00342a] via-[#004d3f] to-[#00342a]">
       {/* Decorative blurs */}
-      <div className="absolute top-20 -left-20 w-80 h-80 rounded-full bg-orange/10 blur-3xl" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 rounded-full bg-teal/10 blur-3xl" />
+      <div className="absolute top-20 -left-20 w-80 h-80 rounded-full bg-[#fecc00]/10 blur-3xl" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 rounded-full bg-[#00342a]/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
@@ -66,7 +66,7 @@ export default function ProviderRecruitment() {
               { val: "0 XAF", label: fr ? "Pour rejoindre \u2014 c\u2019est gratuit" : "To join \u2014 it\u2019s free" },
             ].map((s) => (
               <div key={s.val} className="text-center">
-                <p className="text-3xl sm:text-4xl font-black text-orange">{s.val}</p>
+                <p className="text-3xl sm:text-4xl font-black text-[#735c00]">{s.val}</p>
                 <p className="mt-1 text-xs sm:text-sm text-white/60 font-medium">{s.label}</p>
               </div>
             ))}
@@ -120,7 +120,7 @@ export default function ProviderRecruitment() {
               },
             ].map((s) => (
               <div key={s.step} className="rounded-2xl bg-white/10 backdrop-blur-sm p-6 text-center">
-                <div className="w-10 h-10 rounded-full bg-orange mx-auto flex items-center justify-center text-white font-black text-sm mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#fecc00] mx-auto flex items-center justify-center text-[#1b1b1b] font-black text-sm mb-3">
                   {s.step}
                 </div>
                 <p className="text-lg font-bold text-white mb-1">
@@ -151,9 +151,9 @@ export default function ProviderRecruitment() {
                   max={20}
                   value={jobsPerWeek}
                   onChange={(e) => setJobsPerWeek(Number(e.target.value))}
-                  className="flex-1 accent-orange h-2"
+                  className="flex-1 accent-[#fecc00] h-2"
                 />
-                <span className="text-xl font-black text-orange w-8 text-right">{jobsPerWeek}</span>
+                <span className="text-xl font-black text-[#735c00] w-8 text-right">{jobsPerWeek}</span>
               </div>
             </label>
 
@@ -169,7 +169,7 @@ export default function ProviderRecruitment() {
                     onClick={() => setAvgPrice(p)}
                     className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
                       avgPrice === p
-                        ? "bg-orange text-white shadow-md shadow-orange/30"
+                        ? "bg-[#fecc00] text-[#1b1b1b] shadow-md shadow-[#1b1b1b]/[0.06]"
                         : "bg-white/10 text-white/70 hover:bg-white/20"
                     }`}
                   >
@@ -184,7 +184,7 @@ export default function ProviderRecruitment() {
               <p className="text-sm text-white/60 mb-1">
                 {fr ? "Vos gains mensuels estim\u00e9s" : "Your estimated monthly earnings"}
               </p>
-              <p className="text-4xl sm:text-5xl font-black text-orange">
+              <p className="text-4xl sm:text-5xl font-black text-[#735c00]">
                 {monthly.toLocaleString()} <span className="text-xl">XAF</span>
               </p>
               <p className="text-xs text-white/40 mt-2">
@@ -217,7 +217,7 @@ export default function ProviderRecruitment() {
           <div className="text-center">
             <button
               onClick={scrollToWaitlist}
-              className="inline-block rounded-2xl bg-gradient-to-r from-orange to-[#C94608] px-10 py-4 text-lg font-bold text-white shadow-xl shadow-orange/30 hover:scale-105 transition-transform"
+              className="inline-block rounded-2xl bg-gradient-to-r from-[#fecc00] to-[#d4ad00] px-10 py-4 text-lg font-bold text-[#1b1b1b] shadow-xl shadow-[#1b1b1b]/[0.06] hover:scale-105 transition-transform"
             >
               {fr
                 ? "Rejoindre comme Prestataire \u2014 C\u2019est Gratuit \u2192"

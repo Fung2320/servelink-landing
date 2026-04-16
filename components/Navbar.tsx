@@ -36,7 +36,7 @@ export default function Navbar() {
               onClick={toggleLang}
               className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
                 scrolled
-                  ? "bg-gray-100 text-navy hover:bg-gray-200"
+                  ? "bg-[#f6f3f2] text-[#1b1b1b] hover:bg-[#e8e5e4]"
                   : "bg-white/15 text-white hover:bg-white/25"
               }`}
               aria-label="Toggle language"
@@ -58,7 +58,7 @@ export default function Navbar() {
             </button>
             <a
               href="#waitlist"
-              className="rounded-full bg-orange px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-orange-dark hover:scale-105 pulse-glow"
+              className="rounded-full bg-[#fecc00] px-5 py-2 text-sm font-semibold text-[#1b1b1b] transition-all hover:bg-[#d4ad00] hover:scale-105 pulse-glow"
             >
               {t("navCta")}
             </a>
@@ -70,7 +70,7 @@ export default function Navbar() {
               onClick={toggleLang}
               className={`rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${
                 scrolled
-                  ? "bg-gray-100 text-navy"
+                  ? "bg-[#f6f3f2] text-[#1b1b1b]"
                   : "bg-white/15 text-white"
               }`}
             >
@@ -79,7 +79,7 @@ export default function Navbar() {
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className={`p-1 rounded-md ${
-                scrolled ? "text-navy" : "text-white"
+                scrolled ? "text-[#1b1b1b]" : "text-white"
               }`}
               aria-label="Menu"
             >
@@ -100,7 +100,7 @@ export default function Navbar() {
             <a
               href="#waitlist"
               onClick={() => setMenuOpen(false)}
-              className="block w-full rounded-full bg-orange px-5 py-2.5 text-center text-sm font-semibold text-white"
+              className="block w-full rounded-full bg-[#fecc00] px-5 py-2.5 text-center text-sm font-semibold text-white"
             >
               {t("navCta")}
             </a>

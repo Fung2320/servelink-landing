@@ -46,15 +46,15 @@ export default function ShareThoughts() {
 
   if (submitted) {
     return (
-      <section className="py-12 sm:py-16 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-[#fcf9f8]">
         <div className="mx-auto max-w-xl px-4 text-center">
           <AnimateOnScroll>
-            <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+            <div className="bg-white rounded-2xl border border-[#1b1b1b]/10 p-8 shadow-sm">
               <div className="text-4xl mb-4">🎉</div>
-              <p className="text-lg font-semibold text-navy mb-2">
+              <p className="text-lg font-semibold text-[#1b1b1b] mb-2">
                 {t("shareSuccess" as any)}
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-[#4f4f4f]">
                 {t("shareSuccessSub" as any)}
               </p>
             </div>
@@ -65,17 +65,17 @@ export default function ShareThoughts() {
   }
 
   return (
-    <section className="py-12 sm:py-16 bg-gray-50">
+    <section className="py-12 sm:py-16 bg-[#fcf9f8]">
       <div className="mx-auto max-w-xl px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="text-center mb-8">
             <h2
-              className="text-xl sm:text-2xl font-bold text-navy mb-2"
+              className="text-xl sm:text-2xl font-bold text-[#1b1b1b] mb-2"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {t("shareTitle" as any)}
             </h2>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-[#4f4f4f]">
               {t("shareSub" as any)}
             </p>
           </div>
@@ -84,11 +84,11 @@ export default function ShareThoughts() {
         <AnimateOnScroll>
           <form
             onSubmit={handleSubmit}
-            className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm space-y-4"
+            className="bg-white rounded-2xl border border-[#1b1b1b]/10 p-6 shadow-sm space-y-4"
           >
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-navy mb-1">
+              <label className="block text-sm font-medium text-[#1b1b1b] mb-1">
                 {t("shareName" as any)}
               </label>
               <input
@@ -96,20 +96,20 @@ export default function ShareThoughts() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 maxLength={50}
-                className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal"
+                className="w-full rounded-xl border border-[#1b1b1b]/15 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00342a]/30 focus:border-[#00342a]"
                 placeholder={t("shareNamePh" as any)}
               />
             </div>
 
             {/* City */}
             <div>
-              <label className="block text-sm font-medium text-navy mb-1">
+              <label className="block text-sm font-medium text-[#1b1b1b] mb-1">
                 {t("shareCity" as any)}
               </label>
               <select
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal bg-white"
+                className="w-full rounded-xl border border-[#1b1b1b]/15 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00342a]/30 focus:border-[#00342a] bg-white"
               >
                 <option value="">{t("shareCityPh" as any)}</option>
                 {CITIES.map((c) => (
@@ -120,7 +120,7 @@ export default function ShareThoughts() {
 
             {/* Role */}
             <div>
-              <label className="block text-sm font-medium text-navy mb-1">
+              <label className="block text-sm font-medium text-[#1b1b1b] mb-1">
                 {t("shareRole" as any)}
               </label>
               <div className="flex gap-3">
@@ -131,9 +131,9 @@ export default function ShareThoughts() {
                     onClick={() => setRole(r)}
                     className="flex-1 rounded-xl border px-4 py-2.5 text-sm font-medium transition-colors"
                     style={{
-                      backgroundColor: role === r ? "#1B6B7B" : "transparent",
-                      color: role === r ? "#fff" : "#1a2744",
-                      borderColor: role === r ? "#1B6B7B" : "#e5e7eb",
+                      backgroundColor: role === r ? "#00342a" : "transparent",
+                      color: role === r ? "#fff" : "#00342a",
+                      borderColor: role === r ? "#00342a" : "#e5e7eb",
                     }}
                   >
                     {r === "client"
@@ -146,7 +146,7 @@ export default function ShareThoughts() {
 
             {/* Stars */}
             <div>
-              <label className="block text-sm font-medium text-navy mb-1">
+              <label className="block text-sm font-medium text-[#1b1b1b] mb-1">
                 {t("shareStars" as any)}
               </label>
               <div className="flex gap-1">
@@ -159,7 +159,7 @@ export default function ShareThoughts() {
                     onMouseLeave={() => setHoverStars(0)}
                     className="text-2xl transition-transform hover:scale-110"
                     style={{
-                      color: s <= (hoverStars || stars) ? "#E85D04" : "#d1d5db",
+                      color: s <= (hoverStars || stars) ? "#fecc00" : "#d1d5db",
                     }}
                   >
                     ★
@@ -170,7 +170,7 @@ export default function ShareThoughts() {
 
             {/* Message */}
             <div>
-              <label className="block text-sm font-medium text-navy mb-1">
+              <label className="block text-sm font-medium text-[#1b1b1b] mb-1">
                 {t("shareMessage" as any)}
               </label>
               <textarea
@@ -178,7 +178,7 @@ export default function ShareThoughts() {
                 onChange={(e) => setMessage(e.target.value.slice(0, 200))}
                 maxLength={200}
                 rows={3}
-                className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal resize-none"
+                className="w-full rounded-xl border border-[#1b1b1b]/15 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#00342a]/30 focus:border-[#00342a] resize-none"
                 placeholder={t("shareMessagePh" as any)}
               />
               <p className="text-xs text-gray-400 text-right mt-1">
@@ -194,7 +194,7 @@ export default function ShareThoughts() {
               type="submit"
               disabled={submitting}
               className="w-full rounded-xl py-3 text-white font-semibold text-sm transition-opacity disabled:opacity-50"
-              style={{ backgroundColor: "#E85D04" }}
+              style={{ backgroundColor: "#fecc00" }}
             >
               {submitting
                 ? t("shareSubmitting" as any)

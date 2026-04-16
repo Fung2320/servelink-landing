@@ -5,7 +5,7 @@ import { QRCodeSVG, QRCodeCanvas } from "qrcode.react";
 import { useLang } from "./LanguageContext";
 
 const QR_URL = "https://www.servelinkapp.com";
-const QR_COLOR = "#1B6B7B";
+const QR_COLOR = "#00342a";
 
 interface QRCodeBlockProps {
   label: string;

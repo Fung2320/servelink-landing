@@ -44,7 +44,7 @@ export default function Home() {
           titleKey="videoProviderTitle"
           subtitleKey="videoProviderSub"
           src="/videos/tutorial-provider.mp4"
-          bgClass="bg-gray-50"
+          bgClass="bg-[#fcf9f8]"
         />
         <section id="how-it-works"><HowItWorks /></section>
         <section id="escrow"><EscrowExplainer /></section>
