@@ -83,17 +83,17 @@ export default function CityMap() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-[#fcf9f8] overflow-hidden">
+    <section className="py-16 sm:py-24 bg-gray-50 overflow-hidden">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
         {/* ── Title ─────────────────────────────────────────── */}
         <AnimateOnScroll>
           <div className="text-center mb-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1b1b1b]" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy" style={{ fontFamily: "var(--font-heading)" }}>
               {fr ? "ServeLink arrive dans votre ville" : "ServeLink is coming to your city"}{" "}
               <span className="text-3xl">{"\uD83D\uDDFA\uFE0F"}</span>
             </h2>
-            <p className="mt-3 text-lg text-[#4f4f4f]">
+            <p className="mt-3 text-lg text-gray-500">
               {fr
                 ? "Des gens de tout le Cameroun sont d\u00e9j\u00e0 sur la liste d\u2019attente"
                 : "People from across Cameroon are already on the waitlist"}
@@ -104,7 +104,7 @@ export default function CityMap() {
         {/* ── Live counter ──────────────────────────────────── */}
         {total > 0 && (
           <AnimateOnScroll>
-            <p className="text-center text-lg font-bold text-[#00342a] mb-10">
+            <p className="text-center text-lg font-bold text-teal mb-10">
               &#128293; {total.toLocaleString()}{" "}
               {fr ? "Camerounais d\u00e9j\u00e0 en attente dans" : "Cameroonians already waiting across"}{" "}
               {activeCities} {fr ? "villes" : "cities"}
@@ -118,13 +118,13 @@ export default function CityMap() {
 
             {/* SVG Map */}
             <div className="w-full lg:w-[380px] shrink-0 mx-auto lg:mx-0">
-              <div className="relative bg-white rounded-2xl shadow-lg shadow-[#1b1b1b]/[0.06] p-4 sm:p-6">
+              <div className="relative bg-white rounded-2xl shadow-lg shadow-black/[0.04] p-4 sm:p-6">
                 <svg viewBox="80 180 180 200" className="w-full h-auto" fill="none">
                   {/* Simplified Cameroon outline */}
                   <path
                     d="M160 195 L180 200 L195 210 L210 220 L220 235 L225 250 L230 270 L228 285 L225 300 L220 320 L210 340 L200 355 L185 365 L170 370 L155 368 L140 360 L130 350 L120 335 L115 320 L112 305 L110 290 L115 275 L120 260 L125 245 L130 230 L140 215 L150 205 Z"
                     fill="#E8F4F6"
-                    stroke="#00342a"
+                    stroke="#1B6B7B"
                     strokeWidth="1.5"
                     strokeLinejoin="round"
                   />
@@ -139,20 +139,20 @@ export default function CityMap() {
                         className="cursor-pointer"
                       >
                         {/* Pulse ring */}
-                        <circle cx={city.x} cy={city.y} r={r + 4} fill="none" stroke={isHovered ? "#fecc00" : "#00342a"} strokeWidth="1" opacity="0.3">
+                        <circle cx={city.x} cy={city.y} r={r + 4} fill="none" stroke={isHovered ? "#E85D04" : "#1B6B7B"} strokeWidth="1" opacity="0.3">
                           <animate attributeName="r" from={r + 2} to={r + 8} dur="2s" repeatCount="indefinite" />
                           <animate attributeName="opacity" from="0.4" to="0" dur="2s" repeatCount="indefinite" />
                         </circle>
                         {/* Dot */}
                         <circle
                           cx={city.x} cy={city.y} r={r}
-                          fill={isHovered ? "#fecc00" : "#00342a"}
+                          fill={isHovered ? "#E85D04" : "#1B6B7B"}
                           className="transition-all duration-200"
                         />
                         {/* Tooltip on hover */}
                         {isHovered && (
                           <g>
-                            <rect x={city.x - 40} y={city.y - 32} width="80" height="24" rx="6" fill="#00342a" />
+                            <rect x={city.x - 40} y={city.y - 32} width="80" height="24" rx="6" fill="#1a2744" />
                             <text x={city.x} y={city.y - 16} textAnchor="middle" fill="white" fontSize="8" fontWeight="700">
                               {city.name} ({city.count})
                             </text>
@@ -163,7 +163,7 @@ export default function CityMap() {
                   })}
                 </svg>
                 {/* Legend */}
-                <div className="flex justify-center gap-4 mt-3 text-[11px] text-[#4f4f4f] font-medium">
+                <div className="flex justify-center gap-4 mt-3 text-[11px] text-gray-500 font-medium">
                   <span><span className="inline-block w-2 h-2 rounded-full bg-[#EF4444] mr-1" />50+</span>
                   <span><span className="inline-block w-2 h-2 rounded-full bg-[#F59E0B] mr-1" />20-49</span>
                   <span><span className="inline-block w-2 h-2 rounded-full bg-[#22C55E] mr-1" />&lt;20</span>
@@ -176,7 +176,7 @@ export default function CityMap() {
               {citiesWithDemand.map((city) => (
                 <div
                   key={city.name}
-                  className="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm shadow-[#1b1b1b]/[0.06] hover:shadow-md transition-shadow"
+                  className="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm shadow-black/[0.04] hover:shadow-md transition-shadow"
                   onMouseEnter={() => setHoveredCity(city.name)}
                   onMouseLeave={() => setHoveredCity(null)}
                 >
@@ -187,7 +187,7 @@ export default function CityMap() {
                   />
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-[#1b1b1b]">{city.name}</p>
+                    <p className="text-sm font-bold text-navy">{city.name}</p>
                     <p className="text-xs text-gray-400">{fr ? city.regionFr : city.region}</p>
                   </div>
                   {/* Count badge */}
@@ -211,14 +211,14 @@ export default function CityMap() {
         {/* ── CTA ───────────────────────────────────────────── */}
         <AnimateOnScroll>
           <div className="text-center mt-12">
-            <p className="text-sm text-[#4f4f4f] mb-4">
+            <p className="text-sm text-gray-500 mb-4">
               {fr
                 ? "Vous ne voyez pas votre ville ? Rejoignez la liste \u2014 nous nous d\u00e9veloppons selon la demande !"
                 : "Don\u2019t see your city? Join the waitlist \u2014 we expand based on demand!"}
             </p>
             <button
               onClick={scrollToWaitlist}
-              className="inline-block rounded-xl bg-gradient-to-r from-[#00342a] to-[#004d3f] px-8 py-3 text-base font-bold text-white shadow-lg shadow-[#1b1b1b]/[0.06] hover:scale-105 transition-transform"
+              className="inline-block rounded-xl bg-gradient-to-r from-teal to-teal-dark px-8 py-3 text-base font-bold text-white shadow-lg shadow-teal/20 hover:scale-105 transition-transform"
             >
               {fr ? "Rejoindre la liste d\u2019attente \u2192" : "Join the waitlist \u2192"}
             </button>

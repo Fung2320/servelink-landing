@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const manrope = Manrope({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const poppins = Poppins({
   variable: "--font-heading",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -55,12 +55,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${plusJakartaSans.variable} antialiased scroll-smooth`}
+      className={`${inter.variable} ${poppins.variable} antialiased scroll-smooth`}
     >
       <head>
         <link
           rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 4C16.268 4 10 10.268 10 18c0 10.5 14 26 14 26s14-15.5 14-26c0-7.732-6.268-14-14-14z' fill='%2300342a'/><circle cx='24' cy='18' r='8' fill='%23fecc00'/><path d='M20.5 18L23 20.5L28 15.5' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 4C16.268 4 10 10.268 10 18c0 10.5 14 26 14 26s14-15.5 14-26c0-7.732-6.268-14-14-14z' fill='%231B6B7B'/><circle cx='24' cy='18' r='8' fill='%23E85D04'/><path d='M20.5 18L23 20.5L28 15.5' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>"
           type="image/svg+xml"
         />
         {process.env.NEXT_PUBLIC_GA_ID && (
@@ -70,7 +70,7 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className="min-h-screen bg-[#fcf9f8] text-[#1b1b1b]" style={{ fontFamily: "var(--font-sans)" }}>{children}</body>
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }

@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
     >
       <div className="relative">
         {/* Tooltip */}
-        <span className="absolute bottom-full right-0 mb-2 whitespace-nowrap rounded-lg bg-[#00342a] px-3 py-1.5 text-xs font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="absolute bottom-full right-0 mb-2 whitespace-nowrap rounded-lg bg-navy px-3 py-1.5 text-xs font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           {lang === "fr" ? "Besoin d\u2019aide ? Discutez avec nous" : "Need help? Chat with us"}
         </span>
         {/* Button */}

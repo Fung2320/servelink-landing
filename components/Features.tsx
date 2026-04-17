@@ -8,13 +8,13 @@ const features = [
     emoji: "\ud83d\udd12",
     titleKey: "feat1Title",
     descKey: "feat1Desc",
-    color: "bg-[#00342a]/10 text-[#00342a]",
+    color: "bg-teal/10 text-teal",
   },
   {
     emoji: "\ud83d\udcb0",
     titleKey: "feat2Title",
     descKey: "feat2Desc",
-    color: "bg-[#fecc00]/10 text-[#735c00]",
+    color: "bg-orange/10 text-orange",
   },
   {
     emoji: "\ud83c\udf0d",
@@ -26,13 +26,13 @@ const features = [
     emoji: "\ud83e\udd16",
     titleKey: "feat4Title",
     descKey: "feat4Desc",
-    color: "bg-[#00342a]/10 text-[#1b1b1b]",
+    color: "bg-navy/10 text-navy",
   },
   {
     emoji: "\u26a1",
     titleKey: "feat5Title",
     descKey: "feat5Desc",
-    color: "bg-[#fecc00]/10 text-[#735c00]",
+    color: "bg-orange/10 text-orange",
   },
 ] as const;
 
@@ -41,13 +41,13 @@ const aiFeatures = [
     emoji: "\ud83e\udde0",
     titleKey: "aiFeat1Title",
     descKey: "aiFeat1Desc",
-    color: "bg-[#00342a]/10 text-[#00342a]",
+    color: "bg-teal/10 text-teal",
   },
   {
     emoji: "\ud83d\udcf8",
     titleKey: "aiFeat2Title",
     descKey: "aiFeat2Desc",
-    color: "bg-[#00342a]/10 text-[#1b1b1b]",
+    color: "bg-navy/10 text-navy",
   },
   {
     emoji: "\ud83e\udd16",
@@ -59,7 +59,7 @@ const aiFeatures = [
     emoji: "\u26a1",
     titleKey: "aiFeat4Title",
     descKey: "aiFeat4Desc",
-    color: "bg-[#fecc00]/10 text-[#735c00]",
+    color: "bg-orange/10 text-orange",
   },
 ] as const;
 
@@ -68,11 +68,11 @@ export default function Features() {
 
   return (
     <>
-      <section id="features" className="py-20 sm:py-28 bg-[#fcf9f8]">
+      <section id="features" className="py-20 sm:py-28 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll className="text-center mb-14">
             <h2
-              className="text-3xl sm:text-4xl font-bold text-[#1b1b1b] mb-4"
+              className="text-3xl sm:text-4xl font-bold text-navy mb-4"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {t("featuresTitle")}
@@ -87,7 +87,7 @@ export default function Features() {
               {features.map((f, i) => (
                 <div
                   key={i}
-                  className={`group rounded-2xl bg-white border border-[#1b1b1b]/10 p-7 sm:p-8 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:border-[#00342a]/20 ${
+                  className={`group rounded-2xl bg-white border border-gray-100 p-7 sm:p-8 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:border-teal/20 ${
                     i >= 3 ? "sm:col-span-1 lg:col-start-auto" : ""
                   }`}
                 >
@@ -97,7 +97,7 @@ export default function Features() {
                     {f.emoji}
                   </div>
                   <h3
-                    className="text-lg font-bold text-[#1b1b1b] mb-2"
+                    className="text-lg font-bold text-navy mb-2"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {t(f.titleKey)}
@@ -114,11 +114,11 @@ export default function Features() {
       <section id="ai-features" className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#00342a]/10 px-4 py-1.5 mb-4">
-              <span className="text-sm font-semibold text-[#00342a]">\ud83e\udde0 AI</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-teal/10 px-4 py-1.5 mb-4">
+              <span className="text-sm font-semibold text-teal">\ud83e\udde0 AI</span>
             </div>
             <h2
-              className="text-3xl sm:text-4xl font-bold text-[#1b1b1b] mb-4"
+              className="text-3xl sm:text-4xl font-bold text-navy mb-4"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {t("aiSectionTitle")}
@@ -133,7 +133,7 @@ export default function Features() {
               {aiFeatures.map((f, i) => (
                 <div
                   key={i}
-                  className="group rounded-2xl bg-[#fcf9f8] border border-[#1b1b1b]/10 p-7 sm:p-8 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:border-[#00342a]/20"
+                  className="group rounded-2xl bg-gray-50 border border-gray-100 p-7 sm:p-8 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:border-teal/20"
                 >
                   <div
                     className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${f.color} mb-5 text-2xl transition-transform duration-300 group-hover:scale-110`}
@@ -141,7 +141,7 @@ export default function Features() {
                     {f.emoji}
                   </div>
                   <h3
-                    className="text-lg font-bold text-[#1b1b1b] mb-2"
+                    className="text-lg font-bold text-navy mb-2"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {t(f.titleKey)}

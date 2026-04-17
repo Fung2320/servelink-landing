@@ -38,8 +38,8 @@ export default function RecentSignupToast() {
 
   return (
     <div className="fixed bottom-24 left-4 z-30 animate-slide-up">
-      <div className="flex items-center gap-3 rounded-xl bg-[#00342a] px-4 py-3 shadow-xl max-w-xs">
-        <div className="w-8 h-8 rounded-full bg-[#00342a] flex items-center justify-center text-white text-xs font-bold shrink-0">
+      <div className="flex items-center gap-3 rounded-xl bg-[#1a2744] px-4 py-3 shadow-xl max-w-xs">
+        <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-white text-xs font-bold shrink-0">
           {n.name[0]}
         </div>
         <p className="text-sm text-white/90 font-medium leading-snug">{text}</p>

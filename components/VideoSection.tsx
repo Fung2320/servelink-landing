@@ -24,12 +24,12 @@ export default function VideoSection({
         <AnimateOnScroll>
           <div className="text-center mb-10">
             <h2
-              className="text-2xl sm:text-3xl font-bold text-[#1b1b1b] mb-3"
+              className="text-2xl sm:text-3xl font-bold text-navy mb-3"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {t(titleKey as any)}
             </h2>
-            <p className="text-base text-[#4f4f4f] max-w-lg mx-auto">
+            <p className="text-base text-gray-500 max-w-lg mx-auto">
               {t(subtitleKey as any)}
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function VideoSection({
 
         <AnimateOnScroll>
           <div className="flex justify-center">
-            <div className="w-full max-w-xs rounded-2xl overflow-hidden shadow-xl border border-[#1b1b1b]/10">
+            <div className="w-full max-w-xs rounded-2xl overflow-hidden shadow-xl border border-gray-100">
               <video
                 src={src}
                 className="w-full"

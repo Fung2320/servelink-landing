@@ -13,8 +13,8 @@ export default function Hero() {
     <section className="relative min-h-[100dvh] flex items-center justify-center hero-gradient overflow-hidden">
       {/* Decorative shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-[#00342a]/20 blur-3xl float-slow" />
-        <div className="absolute bottom-20 -left-16 w-64 h-64 rounded-full bg-[#fecc00]/15 blur-2xl float-medium" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-teal/20 blur-3xl float-slow" />
+        <div className="absolute bottom-20 -left-16 w-64 h-64 rounded-full bg-orange/15 blur-2xl float-medium" />
         <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full bg-white/5 blur-xl float-slow" />
         <div className="absolute bottom-1/4 right-1/3 w-32 h-32 rounded-full border border-white/10" />
         <div className="absolute top-1/4 left-1/4 w-24 h-24 rounded-full border border-white/5" />
@@ -54,7 +54,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
               href="#waitlist"
-              className="w-full sm:w-auto rounded-full bg-[#fecc00] px-8 py-3.5 text-base font-semibold text-[#1b1b1b] transition-all hover:bg-[#d4ad00] hover:scale-105 pulse-glow"
+              className="w-full sm:w-auto rounded-full bg-orange px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-orange-dark hover:scale-105 pulse-glow"
             >
               {t("heroCta1")}
             </a>
@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
             <div className="w-px h-10 bg-white/20 hidden sm:block" />
             <div className="text-center flex items-center gap-2">
-              <p className="text-lg sm:text-xl font-bold text-[#735c00]">{t("stat3")}</p>
+              <p className="text-lg sm:text-xl font-bold text-orange">{t("stat3")}</p>
               <span className="text-xl" role="img" aria-label="coming soon">&#128284;</span>
             </div>
           </div>

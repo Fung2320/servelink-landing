@@ -8,8 +8,8 @@ const STEPS = [
   {
     num: "1",
     emoji: "\uD83D\uDCF1",
-    color: "from-[#00342a] to-[#004d3f]",
-    shadow: "shadow-[#1b1b1b]/[0.06]",
+    color: "from-teal to-teal-dark",
+    shadow: "shadow-teal/20",
     titleEn: "You book & pay",
     titleFr: "Vous r\u00e9servez & payez",
     descEn: "You pay via MTN MoMo or Orange Money. Your money goes into secure escrow \u2014 NOT to the provider yet.",
@@ -18,8 +18,8 @@ const STEPS = [
   {
     num: "2",
     emoji: "\u2705",
-    color: "from-[#fecc00] to-[#d4ad00]",
-    shadow: "shadow-[#1b1b1b]/[0.06]",
+    color: "from-orange to-[#C94608]",
+    shadow: "shadow-orange/20",
     titleEn: "Job gets done",
     titleFr: "Le travail est effectu\u00e9",
     descEn: "The provider arrives and completes your service. You can chat with them before and during the job.",
@@ -28,7 +28,7 @@ const STEPS = [
   {
     num: "3",
     emoji: "\uD83D\uDCB8",
-    color: "from-[#004d3f] to-[#00342a]",
+    color: "from-green-500 to-green-600",
     shadow: "shadow-green-500/20",
     titleEn: "You confirm & money releases",
     titleFr: "Vous confirmez & l\u2019argent est lib\u00e9r\u00e9",
@@ -42,7 +42,7 @@ function Arrow() {
   return (
     <div className="hidden sm:flex items-center justify-center w-10 shrink-0 self-center">
       <svg width="28" height="20" viewBox="0 0 28 20" fill="none" className="animate-pulse">
-        <path d="M2 10H22M22 10L16 4M22 10L16 16" stroke="#00342a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M2 10H22M22 10L16 4M22 10L16 16" stroke="#1B6B7B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   );
@@ -53,7 +53,7 @@ function ArrowDown() {
   return (
     <div className="flex sm:hidden items-center justify-center py-2">
       <svg width="20" height="28" viewBox="0 0 20 28" fill="none" className="animate-pulse">
-        <path d="M10 2V22M10 22L4 16M10 22L16 16" stroke="#00342a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M10 2V22M10 22L4 16M10 22L16 16" stroke="#1B6B7B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   );
@@ -70,11 +70,11 @@ export default function EscrowExplainer() {
         {/* ── Title ─────────────────────────────────────────── */}
         <AnimateOnScroll>
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1b1b1b]" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy" style={{ fontFamily: "var(--font-heading)" }}>
               {fr ? "Votre argent est toujours prot\u00e9g\u00e9" : "Your money is always protected"}{" "}
               <span className="text-3xl">{"\uD83D\uDD12"}</span>
             </h2>
-            <p className="mt-3 text-lg text-[#4f4f4f] max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
               {fr
                 ? "L\u2019escrow ServeLink prot\u00e8ge votre paiement de la r\u00e9servation \u00e0 la fin du travail"
                 : "ServeLink escrow keeps your payment safe from booking to completion"}
@@ -93,10 +93,10 @@ export default function EscrowExplainer() {
                     {step.num}
                   </div>
                   <p className="text-2xl mb-2">{step.emoji}</p>
-                  <h3 className="text-lg font-bold text-[#1b1b1b] mb-2">
+                  <h3 className="text-lg font-bold text-navy mb-2">
                     {fr ? step.titleFr : step.titleEn}
                   </h3>
-                  <p className="text-sm text-[#4f4f4f] leading-relaxed">
+                  <p className="text-sm text-gray-500 leading-relaxed">
                     {fr ? step.descFr : step.descEn}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function EscrowExplainer() {
               { icon: "\uD83D\uDCF5", en: "No cash \u2014 no risk", fr: "Pas de cash \u2014 pas de risque" },
               { icon: "\uD83C\uDDE8\uD83C\uDDF2", en: "Powered by MTN MoMo & Orange Money", fr: "Via MTN MoMo & Orange Money" },
             ].map((b) => (
-              <span key={b.en} className="text-sm text-[#4f4f4f] font-medium">
+              <span key={b.en} className="text-sm text-gray-500 font-medium">
                 {b.icon} {fr ? b.fr : b.en}
               </span>
             ))}
@@ -132,16 +132,16 @@ export default function EscrowExplainer() {
         {/* ── Comparison table ──────────────────────────────── */}
         <AnimateOnScroll>
           <div className="max-w-2xl mx-auto">
-            <h3 className="text-center text-lg font-bold text-[#1b1b1b] mb-6" style={{ fontFamily: "var(--font-heading)" }}>
+            <h3 className="text-center text-lg font-bold text-navy mb-6" style={{ fontFamily: "var(--font-heading)" }}>
               {fr ? "L\u2019ancienne mani\u00e8re vs ServeLink" : "The old way vs ServeLink"}
             </h3>
-            <div className="rounded-2xl overflow-hidden shadow-lg shadow-[#1b1b1b]/[0.06]">
+            <div className="rounded-2xl overflow-hidden shadow-lg shadow-black/[0.04]">
               {/* Header */}
               <div className="grid grid-cols-2 text-center">
-                <div className="bg-[#f6f3f2] py-3 px-4">
+                <div className="bg-gray-100 py-3 px-4">
                   <span className="text-sm font-bold text-gray-400">{fr ? "Avant" : "Old way"} &#128542;</span>
                 </div>
-                <div className="bg-[#00342a] py-3 px-4">
+                <div className="bg-teal py-3 px-4">
                   <span className="text-sm font-bold text-white">ServeLink &#128640;</span>
                 </div>
               </div>
@@ -168,13 +168,13 @@ export default function EscrowExplainer() {
                   new: fr ? "Faire confiance \u00e0 un pro not\u00e9" : "Trust a rated professional",
                 },
               ].map((row, i) => (
-                <div key={i} className={`grid grid-cols-2 ${i % 2 === 0 ? "bg-white" : "bg-[#fcf9f8]/50"}`}>
-                  <div className="py-3 px-4 border-r border-[#1b1b1b]/10 flex items-center">
+                <div key={i} className={`grid grid-cols-2 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}>
+                  <div className="py-3 px-4 border-r border-gray-100 flex items-center">
                     <span className="text-sm text-gray-400 line-through decoration-red-300">{row.old}</span>
                   </div>
                   <div className="py-3 px-4 flex items-center gap-2">
                     <span className="text-green-500 text-sm">{"\u2713"}</span>
-                    <span className="text-sm text-[#1b1b1b] font-semibold">{row.new}</span>
+                    <span className="text-sm text-navy font-semibold">{row.new}</span>
                   </div>
                 </div>
               ))}

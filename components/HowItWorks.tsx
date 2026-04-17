@@ -13,7 +13,7 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
     ),
-    color: "bg-[#00342a]",
+    color: "bg-teal",
   },
   {
     number: "2",
@@ -24,7 +24,7 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
-    color: "bg-[#fecc00]",
+    color: "bg-orange",
   },
   {
     number: "3",
@@ -47,7 +47,7 @@ export default function HowItWorks() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-14">
           <h2
-            className="text-3xl sm:text-4xl font-bold text-[#1b1b1b] mb-4"
+            className="text-3xl sm:text-4xl font-bold text-navy mb-4"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("howTitle")}
@@ -60,7 +60,7 @@ export default function HowItWorks() {
         <AnimateOnScroll stagger>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
             {/* Connector line (desktop only) */}
-            <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-[#00342a] via-[#fecc00] to-[#004d3f]" aria-hidden="true" />
+            <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-teal via-orange to-green" aria-hidden="true" />
 
             {steps.map((step) => (
               <div key={step.number} className="relative flex flex-col items-center text-center group">
@@ -69,11 +69,11 @@ export default function HowItWorks() {
                 >
                   {step.icon}
                 </div>
-                <span className="absolute top-0 right-1/2 translate-x-12 -translate-y-1 text-xs font-bold text-white bg-[#00342a] rounded-full w-6 h-6 flex items-center justify-center z-20">
+                <span className="absolute top-0 right-1/2 translate-x-12 -translate-y-1 text-xs font-bold text-white bg-navy rounded-full w-6 h-6 flex items-center justify-center z-20">
                   {step.number}
                 </span>
                 <h3
-                  className="text-xl font-bold text-[#1b1b1b] mb-2"
+                  className="text-xl font-bold text-navy mb-2"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {t(step.titleKey)}

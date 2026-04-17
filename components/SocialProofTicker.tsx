@@ -57,7 +57,7 @@ export default function SocialProofTicker() {
   const all = [...items, ...items];
 
   return (
-    <div className="bg-[#00342a] overflow-hidden py-2.5">
+    <div className="bg-teal overflow-hidden py-2.5">
       <div className="flex animate-marquee whitespace-nowrap">
         {all.map((text, i) => (
           <span key={i} className="mx-8 text-sm font-medium text-white/90">{text}</span>

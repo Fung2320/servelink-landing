@@ -16,10 +16,10 @@ export default function MobileStickyJoin() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/90 backdrop-blur-md border-t border-[#1b1b1b]/10 sm:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/90 backdrop-blur-md border-t border-gray-100 sm:hidden">
       <button
         onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
-        className="w-full rounded-xl bg-gradient-to-r from-[#fecc00] to-[#d4ad00] py-3.5 text-base font-bold text-[#1b1b1b] shadow-lg shadow-[#1b1b1b]/[0.06] active:scale-[0.98] transition-transform"
+        className="w-full rounded-xl bg-gradient-to-r from-orange to-[#C94608] py-3.5 text-base font-bold text-white shadow-lg shadow-orange/30 active:scale-[0.98] transition-transform"
       >
         {lang === "fr" ? "Rejoindre la liste d\u2019attente \u2192" : "Join the waitlist \u2192"}
       </button>

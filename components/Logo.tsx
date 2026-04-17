@@ -19,10 +19,10 @@ export default function Logo({ size = 36, className = "" }: Props) {
         {/* Pin shape */}
         <path
           d="M24 4C16.268 4 10 10.268 10 18c0 10.5 14 26 14 26s14-15.5 14-26c0-7.732-6.268-14-14-14z"
-          fill="#00342a"
+          fill="#1B6B7B"
         />
         {/* Inner circle */}
-        <circle cx="24" cy="18" r="8" fill="#fecc00" />
+        <circle cx="24" cy="18" r="8" fill="#E85D04" />
         {/* Checkmark */}
         <path
           d="M20.5 18L23 20.5L28 15.5"
@@ -36,8 +36,8 @@ export default function Logo({ size = 36, className = "" }: Props) {
         className="text-xl font-bold tracking-tight"
         style={{ fontFamily: "var(--font-heading)" }}
       >
-        <span className="text-[#00342a]">Serve</span>
-        <span className="text-[#735c00]">Link</span>
+        <span className="text-teal">Serve</span>
+        <span className="text-orange">Link</span>
       </span>
     </div>
   );

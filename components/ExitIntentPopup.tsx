@@ -33,26 +33,26 @@ export default function ExitIntentPopup() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1b1b1b]/50 backdrop-blur-sm animate-fade">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade">
       <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center">
         <button
           onClick={() => setVisible(false)}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#f6f3f2] flex items-center justify-center text-gray-400 hover:bg-[#e8e5e4] transition-colors"
+          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-gray-200 transition-colors"
         >
           &#10005;
         </button>
         <p className="text-4xl mb-4">&#9889;</p>
-        <h3 className="text-xl font-bold text-[#1b1b1b] mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+        <h3 className="text-xl font-bold text-navy mb-2" style={{ fontFamily: "var(--font-heading)" }}>
           {fr ? "Attendez ! Ne manquez pas votre place" : "Wait! Don\u2019t miss your founding member spot"}
         </h3>
-        <p className="text-sm text-[#4f4f4f] mb-6">
+        <p className="text-sm text-gray-500 mb-6">
           {fr
             ? "Seulement 100 places de membres fondateurs. Rejoignez maintenant, c\u2019est gratuit."
             : "Only 100 founding member spots available. Join now, it\u2019s free."}
         </p>
         <button
           onClick={scrollToWaitlist}
-          className="w-full rounded-xl bg-gradient-to-r from-[#fecc00] to-[#d4ad00] py-3.5 text-base font-bold text-[#1b1b1b] shadow-lg shadow-[#1b1b1b]/[0.06] hover:scale-[1.02] transition-transform"
+          className="w-full rounded-xl bg-gradient-to-r from-orange to-[#C94608] py-3.5 text-base font-bold text-white shadow-lg shadow-orange/30 hover:scale-[1.02] transition-transform"
         >
           {fr ? "Rejoindre la liste d\u2019attente \u2192" : "Join the waitlist \u2014 it\u2019s free \u2192"}
         </button>

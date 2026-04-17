@@ -65,7 +65,7 @@ export default function Footer() {
   const { t } = useLang();
 
   return (
-    <footer className="bg-[#00342a] text-white">
+    <footer className="bg-navy-dark text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand */}
@@ -83,7 +83,7 @@ export default function Footer() {
             </h4>
             <a
               href="mailto:contact@servelinkapp.com"
-              className="text-sm text-white/70 hover:text-[#735c00] transition-colors"
+              className="text-sm text-white/70 hover:text-orange transition-colors"
             >
               contact@servelinkapp.com
             </a>
@@ -101,7 +101,7 @@ export default function Footer() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 text-white/70 transition-all hover:bg-[#fecc00] hover:text-white hover:scale-110"
+                  className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 text-white/70 transition-all hover:bg-orange hover:text-white hover:scale-110"
                   aria-label={s.name}
                 >
                   {s.icon}
@@ -117,15 +117,15 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-2">
               <a href="https://api.servelinkapp.com/privacy" target="_blank" rel="noopener noreferrer"
-                className="text-sm text-white/70 hover:text-[#735c00] transition-colors">{t("footerPrivacy")}</a>
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerPrivacy")}</a>
               <a href="https://api.servelinkapp.com/terms" target="_blank" rel="noopener noreferrer"
-                className="text-sm text-white/70 hover:text-[#735c00] transition-colors">{t("footerTerms")}</a>
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerTerms")}</a>
               <a href="https://api.servelinkapp.com/cookies" target="_blank" rel="noopener noreferrer"
-                className="text-sm text-white/70 hover:text-[#735c00] transition-colors">{t("footerCookie")}</a>
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerCookie")}</a>
               <a href="https://api.servelinkapp.com/acceptable-use" target="_blank" rel="noopener noreferrer"
-                className="text-sm text-white/70 hover:text-[#735c00] transition-colors">{t("footerAcceptableUse")}</a>
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerAcceptableUse")}</a>
               <a href="https://api.servelinkapp.com/disclaimer" target="_blank" rel="noopener noreferrer"
-                className="text-sm text-white/70 hover:text-[#735c00] transition-colors">{t("footerDisclaimer")}</a>
+                className="text-sm text-white/70 hover:text-orange transition-colors">{t("footerDisclaimer")}</a>
             </div>
           </div>
 
