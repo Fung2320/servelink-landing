@@ -33,7 +33,7 @@ export default function CookieConsent() {
       : "We use cookies to improve your experience. By continuing, you agree to our";
 
   const policyLabel =
-    lang === "fr" ? "Politique de confidentialite" : "Privacy Policy";
+    lang === "fr" ? "Politique de cookies" : "Cookie Policy";
 
   const acceptLabel = lang === "fr" ? "Tout accepter" : "Accept All";
   const manageLabel =
