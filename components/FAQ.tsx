@@ -60,8 +60,8 @@ const PROVIDER_FAQS: FAQItem[] = [
   {
     qEn: "How much do I earn per booking?",
     qFr: "Combien je gagne par r\u00e9servation ?",
-    aEn: "You keep 85% of every booking. ServeLink takes a 15% platform fee to cover payment processing, insurance, and platform maintenance.",
-    aFr: "Vous gardez 85% de chaque r\u00e9servation. ServeLink prend 15% de frais de plateforme pour couvrir le traitement des paiements et la maintenance.",
+    aEn: "You keep 83% of every booking. ServeLink takes 17% total (15% platform fee + 2% payment processing) to cover payment processing, insurance, and platform maintenance.",
+    aFr: "Vous gardez 83% de chaque r\u00e9servation. ServeLink prend 17% au total (15% de frais de plateforme + 2% de traitement des paiements) pour couvrir les paiements, l'assurance et la maintenance.",
   },
   {
     qEn: "When do I get paid?",

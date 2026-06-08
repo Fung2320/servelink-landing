@@ -192,13 +192,13 @@ export const translations = {
     priceFaq1Q: "How much does it cost to book a service?",
     priceFaq1A: "Prices vary by service. You set your own budget when booking. Typical prices: cleaning 3,000\u201310,000 XAF, plumbing 5,000\u201315,000 XAF, tutoring 2,000\u20138,000 XAF per session.",
     priceFaq2Q: "Are there any hidden fees?",
-    priceFaq2A: "No hidden fees. The price you see is the price you pay. ServeLink takes a 15% service fee from the provider\u2019s side, not from you.",
+    priceFaq2A: "No hidden fees. The price you see is the price you pay. ServeLink takes 17% from the provider\u2019s side (15% platform fee + 2% payment processing), not from you.",
     priceFaq3Q: "What payment methods are accepted?",
     priceFaq3A: "MTN Mobile Money and Orange Money. Top up your ServeLink Wallet, then book instantly. Your money is held safely until the job is done.",
     priceFaq4Q: "What if I cancel?",
     priceFaq4A: "Free cancellation within 30 minutes of booking. After that, a 10% cancellation fee applies. The rest is refunded to your wallet.",
     priceFaq5Q: "How do providers get paid?",
-    priceFaq5A: "Providers receive 85% of the booking amount directly in their ServeLink Wallet as soon as the job is marked complete. They can withdraw anytime via MoMo.",
+    priceFaq5A: "Providers receive 83% of the booking amount directly in their ServeLink Wallet as soon as the job is marked complete. They can withdraw anytime via MoMo.",
 
     // AI Features section
     aiSectionTitle: "Powered by AI",
@@ -441,13 +441,13 @@ export const translations = {
     priceFaq1Q: "Combien co\u00fbte une r\u00e9servation ?",
     priceFaq1A: "Les prix varient selon le service. Vous fixez votre budget. Prix typiques : m\u00e9nage 3 000\u201310 000 XAF, plomberie 5 000\u201315 000 XAF, cours 2 000\u20138 000 XAF.",
     priceFaq2Q: "Y a-t-il des frais cach\u00e9s ?",
-    priceFaq2A: "Aucun frais cach\u00e9. Le prix affich\u00e9 est le prix que vous payez. ServeLink pr\u00e9l\u00e8ve 15% de commission du c\u00f4t\u00e9 du prestataire, pas du v\u00f4tre.",
+    priceFaq2A: "Aucun frais cach\u00e9. Le prix affich\u00e9 est le prix que vous payez. ServeLink pr\u00e9l\u00e8ve 17% du c\u00f4t\u00e9 du prestataire (15% de frais de plateforme + 2% de traitement des paiements), pas du v\u00f4tre.",
     priceFaq3Q: "Quels moyens de paiement sont accept\u00e9s ?",
     priceFaq3A: "MTN Mobile Money et Orange Money. Rechargez votre portefeuille ServeLink, puis r\u00e9servez instantan\u00e9ment. Votre argent est s\u00e9curis\u00e9 jusqu\u2019\u00e0 la fin du travail.",
     priceFaq4Q: "Que se passe-t-il si j\u2019annule ?",
     priceFaq4A: "Annulation gratuite dans les 30 minutes. Apr\u00e8s, des frais de 10% s\u2019appliquent. Le reste est rembours\u00e9 sur votre portefeuille.",
     priceFaq5Q: "Comment les prestataires sont-ils pay\u00e9s ?",
-    priceFaq5A: "Les prestataires re\u00e7oivent 85% du montant d\u00e8s que la mission est termin\u00e9e. Retrait possible \u00e0 tout moment via MoMo.",
+    priceFaq5A: "Les prestataires re\u00e7oivent 83% du montant d\u00e8s que la mission est termin\u00e9e. Retrait possible \u00e0 tout moment via MoMo.",
 
     // AI Features section
     aiSectionTitle: "Propuls\u00e9 par l\u2019IA",

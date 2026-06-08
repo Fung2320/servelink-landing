@@ -27,7 +27,7 @@ export default function ProviderRecruitment() {
 
   const [jobsPerWeek, setJobsPerWeek] = useState(5);
   const [avgPrice, setAvgPrice] = useState(8000);
-  const monthly = jobsPerWeek * 4 * avgPrice * 0.85;
+  const monthly = jobsPerWeek * 4 * avgPrice * 0.83;
 
   const scrollToWaitlist = () => {
     const el = document.getElementById("waitlist");
@@ -61,7 +61,7 @@ export default function ProviderRecruitment() {
         <AnimateOnScroll>
           <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-14 max-w-2xl mx-auto">
             {[
-              { val: "85%", label: fr ? "Pour vous directement" : "Goes directly to you" },
+              { val: "83%", label: fr ? "Pour vous directement" : "Goes directly to you" },
               { val: "118+", label: fr ? "Services disponibles" : "Services available" },
               { val: "0 XAF", label: fr ? "Pour rejoindre \u2014 c\u2019est gratuit" : "To join \u2014 it\u2019s free" },
             ].map((s) => (
@@ -115,8 +115,8 @@ export default function ProviderRecruitment() {
                 emoji: "\uD83D\uDCB8",
                 title: fr ? "Soyez pay\u00e9 instantan\u00e9ment" : "Get paid instantly",
                 desc: fr
-                  ? "Terminez le travail, le client confirme, 85% arrive sur votre MoMo imm\u00e9diatement."
-                  : "Complete the job, client confirms, 85% hits your MoMo immediately.",
+                  ? "Terminez le travail, le client confirme, 83% arrive sur votre MoMo imm\u00e9diatement."
+                  : "Complete the job, client confirms, 83% hits your MoMo immediately.",
               },
             ].map((s) => (
               <div key={s.step} className="rounded-2xl bg-white/10 backdrop-blur-sm p-6 text-center">
@@ -189,7 +189,7 @@ export default function ProviderRecruitment() {
               </p>
               <p className="text-xs text-white/40 mt-2">
                 {jobsPerWeek} {fr ? "missions" : "jobs"}/
-                {fr ? "sem" : "wk"} &times; {avgPrice.toLocaleString()} F &times; 85%
+                {fr ? "sem" : "wk"} &times; {avgPrice.toLocaleString()} F &times; 83%
               </p>
             </div>
           </div>

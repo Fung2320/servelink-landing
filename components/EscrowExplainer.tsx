@@ -32,8 +32,8 @@ const STEPS = [
     shadow: "shadow-green-500/20",
     titleEn: "You confirm & money releases",
     titleFr: "Vous confirmez & l\u2019argent est lib\u00e9r\u00e9",
-    descEn: "You confirm the job is done. 85% goes instantly to the provider via MoMo. You\u2019re protected the whole time.",
-    descFr: "Vous confirmez que le travail est termin\u00e9. 85% va instantan\u00e9ment au prestataire via MoMo. Vous \u00eates prot\u00e9g\u00e9 tout le long.",
+    descEn: "You confirm the job is done. 83% goes instantly to the provider via MoMo. You\u2019re protected the whole time.",
+    descFr: "Vous confirmez que le travail est termin\u00e9. 83% va instantan\u00e9ment au prestataire via MoMo. Vous \u00eates prot\u00e9g\u00e9 tout le long.",
   },
 ];
 
