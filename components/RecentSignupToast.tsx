@@ -34,6 +34,27 @@ const NAMES = [
   { name: "Priscille", city: "Yaoundé" }, { name: "Edmond", city: "Bafoussam" },
   { name: "Danielle", city: "Bamenda" }, { name: "Ruphin", city: "Douala" },
   { name: "Tatiana", city: "Limbé" }, { name: "François", city: "Buea" },
+
+  { name: "Monique", city: "Douala" }, { name: "Gustave", city: "Yaoundé" },
+  { name: "Sylvie", city: "Limbé" }, { name: "Achille", city: "Mutengene" },
+  { name: "Nadine", city: "Bafoussam" }, { name: "Roland", city: "Douala" },
+  { name: "Viviane", city: "Bamenda" }, { name: "Alexis", city: "Buea" },
+  { name: "Paulette", city: "Yaoundé" }, { name: "Stéphane", city: "Douala" },
+  { name: "Aurore", city: "Limbé" }, { name: "Thierry", city: "Bafoussam" },
+  { name: "Clarisse", city: "Douala" }, { name: "Maxime", city: "Yaoundé" },
+  { name: "Colette", city: "Mutengene" }, { name: "René", city: "Bamenda" },
+  { name: "Ophélie", city: "Buea" }, { name: "Maurice", city: "Douala" },
+  { name: "Denise", city: "Yaoundé" }, { name: "Lambert", city: "Limbé" },
+  { name: "Gloire", city: "Douala" }, { name: "Symphorien", city: "Buea" },
+  { name: "Chéryl", city: "Bafoussam" }, { name: "Aloys", city: "Yaoundé" },
+  { name: "Suzanne", city: "Douala" }, { name: "Gedeon", city: "Mutengene" },
+  { name: "Henriette", city: "Bamenda" }, { name: "Josué", city: "Douala" },
+  { name: "Anastasie", city: "Limbé" }, { name: "Blaise", city: "Buea" },
+  { name: "Clarisse", city: "Douala" }, { name: "Hilaire", city: "Yaoundé" },
+  { name: "Marleine", city: "Bafoussam" }, { name: "Fidèle", city: "Douala" },
+  { name: "Justine", city: "Mutengene" }, { name: "Sébastien", city: "Bamenda" },
+  { name: "Amélie", city: "Buea" }, { name: "Norbert", city: "Douala" },
+  { name: "Flore", city: "Yaoundé" }, { name: "Constantin", city: "Limbé" },
 ];
 
 export default function RecentSignupToast() {
