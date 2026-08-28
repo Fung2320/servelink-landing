@@ -5,7 +5,7 @@ import { useLang } from "./LanguageContext";
 import { supabase } from "../lib/supabase";
 import AnimateOnScroll from "./AnimateOnScroll";
 
-const LAUNCH_DATE = new Date("2026-09-01T00:00:00+01:00"); // WAT (Cameroon)
+const LAUNCH_DATE = new Date("2026-12-01T00:00:00+01:00"); // WAT (Cameroon)
 
 interface TimeLeft {
   days: number;
@@ -74,7 +74,7 @@ export default function Countdown() {
   const labels =
     lang === "fr"
       ? { title: "ServeLink lance dans...", days: "JOURS", hours: "HEURES", min: "MIN", sec: "SEC", live: "Nous sommes EN LIGNE ! Telecharger maintenant", waiting: `🔥 ${waitlistCount.toLocaleString()} personnes déjà en attente` }
-      : { title: "ServeLink launches in...", days: "DAYS", hours: "HOURS", min: "MIN", sec: "SEC", live: "We are LIVE! Download now", waiting: `🔥 ${waitlistCount.toLocaleString()} people already waiting` };
+      : { title: "ServeLink launches in...", days: "DAYS", hours: "HOURS", min: "MIN", sec: "SEC", live: "We are LIVE! Download now", waiting: `🔥 ${waitlistCount.toLocaleString()} people already waiting`, notice: "🚀 Launch updated to December 2026 — thank you for your patience!" };
 
   return (
     <section className="relative py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
@@ -118,6 +118,9 @@ export default function Countdown() {
                   </div>
                 ))}
               </div>
+
+              {/* Launch delay notice */}
+              <p className="mt-6 text-sm text-gray-500 font-medium">{labels.notice}</p>
 
               {/* Cameroon flag accent bar */}
               <div className="flex justify-center gap-1 mt-8">

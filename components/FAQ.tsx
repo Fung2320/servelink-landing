@@ -84,7 +84,7 @@ const PROVIDER_FAQS: FAQItem[] = [
   {
     qEn: "When does ServeLink launch?",
     qFr: "Quand ServeLink sera-t-il lanc\u00e9 ?",
-    aEn: "We launch September 1, 2026. Join the waitlist now to be among the first to get access and receive founding member benefits.",
+    aEn: "We launch in December 2026. Join the waitlist now to be among the first to get access and receive founding member benefits.",
     aFr: "Nous lan\u00e7ons le 1er septembre 2026. Rejoignez la liste d\u2019attente maintenant pour \u00eatre parmi les premiers \u00e0 y avoir acc\u00e8s.",
   },
 ];
