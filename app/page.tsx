@@ -25,6 +25,7 @@ import CookieConsent from "@/components/CookieConsent";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BackToTop from "@/components/BackToTop";
 import RecentSignupToast from "@/components/RecentSignupToast";
+import LivePresenceToast from "@/components/LivePresenceToast";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import ScrollProgress from "@/components/ScrollProgress";
 import MobileStickyJoin from "@/components/MobileStickyJoin";
@@ -69,6 +70,7 @@ export default function Home() {
       <WhatsAppButton />
       <BackToTop />
       <RecentSignupToast />
+      <LivePresenceToast />
       <ExitIntentPopup />
       <MobileStickyJoin />
     </LanguageProvider>
