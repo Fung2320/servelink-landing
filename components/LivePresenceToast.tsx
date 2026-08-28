@@ -63,8 +63,18 @@ export default function LivePresenceToast() {
   const myKey = useRef<string>("");
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  const simulatedRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const hasRealVisitor = useRef(false);
+
+  const showSimulated = () => {
+    // Pick a random name that isn't the same as last toast
+    const pick = NAMES[Math.floor(Math.random() * NAMES.length)];
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setToast({ name: pick.name, city: pick.city, key: "simulated" });
+    timeoutRef.current = setTimeout(() => setToast(null), 5000);
+  };
+
   useEffect(() => {
-    // Assign this visitor a random identity
     const me = NAMES[Math.floor(Math.random() * NAMES.length)];
     myKey.current = `visitor_${Date.now()}_${Math.random().toString(36).slice(2)}`;
 
@@ -76,9 +86,19 @@ export default function LivePresenceToast() {
       .on("presence", { event: "join" }, ({ newPresences }: { newPresences: any[] }) => {
         const other = newPresences.find((p: any) => p.key !== myKey.current);
         if (!other) return;
+        hasRealVisitor.current = true;
+        // Stop simulated when real visitors are present
+        if (simulatedRef.current) { clearInterval(simulatedRef.current); simulatedRef.current = null; }
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
         setToast({ name: other.name, city: other.city, key: other.key });
         timeoutRef.current = setTimeout(() => setToast(null), 5000);
+      })
+      .on("presence", { event: "leave" }, () => {
+        // When real visitors leave, restart simulated fallback
+        hasRealVisitor.current = false;
+        if (!simulatedRef.current) {
+          simulatedRef.current = setInterval(showSimulated, 30000);
+        }
       })
       .subscribe(async (status: string) => {
         if (status === "SUBSCRIBED") {
@@ -86,8 +106,20 @@ export default function LivePresenceToast() {
         }
       });
 
+    // Start simulated fallback after 8 seconds — show once then every 30s
+    const firstTimer = setTimeout(() => {
+      if (!hasRealVisitor.current) {
+        showSimulated();
+        simulatedRef.current = setInterval(() => {
+          if (!hasRealVisitor.current) showSimulated();
+        }, 30000);
+      }
+    }, 8000);
+
     return () => {
+      clearTimeout(firstTimer);
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      if (simulatedRef.current) clearInterval(simulatedRef.current);
       supabase.removeChannel(channel);
     };
   }, []);
